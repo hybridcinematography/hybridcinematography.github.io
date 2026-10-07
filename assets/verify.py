@@ -111,15 +111,19 @@ def main():
             print('PASS: 5 labeled drone-demo clips with posters, manual playback, and no eager video loading.')
         if path.parent.name == 'videos':
             expected = set((ROOT / 'VIDEO_EXAMPLES' / path.stem).glob('*.mp4'))
+            if path.stem == 'drone_tour':
+                expected = {ROOT / 'assets/drone-demo' / f'{name}.mp4'
+                            for name in ('capture', 'condition', 'gen3c', 'gemini', 'gemini_without_pointcloud')}
+                assert all(v.get('preload') == 'none' and 'poster' in v for v in page.videos)
             actual = {(path.parent / unquote(v['src'])).resolve() for v in page.videos}
             assert expected and actual == expected, f'Video inventory mismatch: {path}'
             assert len(page.videos) == len(expected), f'Duplicate videos: {path}'
             assert all('controls' in v and 'autoplay' not in v for v in page.videos)
     video_folders = {p.name for p in (ROOT / 'VIDEO_EXAMPLES').iterdir()
                      if p.is_dir() and any(p.glob('*.mp4'))}
-    assert {p.stem for p in (ROOT / 'assets/videos').glob('*.html')} == video_folders
+    assert {p.stem for p in (ROOT / 'assets/videos').glob('*.html')} == video_folders | {'drone_tour'}
     total = sum(p.stat().st_size for p in ROOT.rglob('*') if p.is_file() and '.git' not in p.relative_to(ROOT).parts)
-    print(f'PASS: {len(pages)} HTML pages; local assets and anchors verified; outbound HTTPS links allowed; {len(video_folders)} video examples. Package: {total / 1048576:.2f} MiB.')
+    print(f'PASS: {len(pages)} HTML pages; local assets and anchors verified; outbound HTTPS links allowed; {len(pages) - 1} example galleries. Package: {total / 1048576:.2f} MiB.')
     print('This checks package integrity; it does not test browser rendering or playback.')
 
 

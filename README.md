@@ -1,6 +1,6 @@
 # Hybrid Cinematography project website
 
-A static project page for **Hybrid Cinematography: Previsualizing and Managing Hallucination Risk in Generative Video Reshooting**, with an illustrative three-factor explainer, an on-set walkthrough, and 19 video examples. No build, dependencies, or server-side code are required.
+A static project page for **Hybrid Cinematography: Previsualizing and Managing Hallucination Risk in Generative Video Reshooting**, with an illustrative three-factor explainer, an on-set walkthrough, and eight example galleries. The drone tour compares Gemini outputs with and without the target point-cloud video, alongside the input, condition, and Gen3C result. No build, dependencies, or server-side code are required.
 
 ## Preview and verify
 

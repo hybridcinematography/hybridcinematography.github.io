@@ -28,5 +28,11 @@
     "source": "pi3x_conditioning_buffer_authored_clock-clip-1_20260916163839.mp4",
     "source_sha256": "ac238edd4b6ee049fc716500346849f90e845017db1496b9055c845f7bbeedcc",
     "note": "Slide 82 Gemini Omni Flash output reference, original export."
+  },
+  {
+    "file": "gemini_without_pointcloud.mp4",
+    "source": "media76.mp4",
+    "source_sha256": "347bed0c766e22ce9e4b34db094500a6cb303bc4c1fe408a990cdb7817865dac",
+    "note": "Slide 82 embedded Camera_moving_through_Connect_Four-clip-1_20260916160408. Gemini Omni Flash output from 2D video and text prompts without the target point-cloud video. Streams preserved; MP4 metadata moved to the front for playback."
   }
 ]
