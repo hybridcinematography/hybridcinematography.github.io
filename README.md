@@ -1,6 +1,6 @@
 # Hybrid Cinematography project website
 
-A static project page for **Hybrid Cinematography: Previsualizing and Managing Hallucination Risk in Generative Video Reshooting**, with an illustrative three-factor explainer, an on-set walkthrough, and 18 video examples. No build, dependencies, or server-side code are required.
+A static project page for **Hybrid Cinematography: Previsualizing and Managing Hallucination Risk in Generative Video Reshooting**, with an illustrative three-factor explainer, an on-set walkthrough, and 19 video examples. No build, dependencies, or server-side code are required.
 
 ## Preview and verify
 
