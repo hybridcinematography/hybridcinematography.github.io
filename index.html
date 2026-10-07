@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hybrid Cinematography: Previsualizing and Managing Hallucination Risk in Generative Video Reshooting</title><meta name="description" content="Hybrid Cinematography connects physical capture and generative video reshooting. Explore the workflow, geometric explanations, and video examples.">
 <meta name="theme-color" content="#1e6e8c">
-<link rel="stylesheet" href="assets/base.css"><link rel="stylesheet" href="assets/gallery.css"><link rel="stylesheet" href="assets/project.css?v=preview-grid1"></head><body>
+<link rel="stylesheet" href="assets/base.css"><link rel="stylesheet" href="assets/gallery.css"><link rel="stylesheet" href="assets/project.css?v=risk-story1"></head><body>
 <a class="skip-link" href="#main">Skip to content</a>
 <main class="gallery" id="main">
 <header class="project-hero">
@@ -13,6 +13,31 @@
 </header>
 <section class="project-video" id="video" aria-label="Project video">
   <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/Y9uDFzBZXWE" title="Hybrid Cinematography project video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+</section>
+<section class="risk-story" id="hallucination-risk" aria-labelledby="risk-story-heading">
+  <div class="section-heading"><h2 id="risk-story-heading">How far you can move depends on what you captured</h2><button class="resource preview-toggle" id="story-toggle" type="button" hidden>Pause illustrations</button></div>
+  <p class="risk-intro">A new camera move can reveal surfaces, details, or views of a performance that the recorded take never captured. The model must invent that missing content, potentially changing the scene or the performer. These changes may only become apparent after generation, when the chance to capture more has passed.</p>
+  <div class="risk-example">
+    <figure class="reshoot-comparison">
+      <figcaption><span>Recorded take</span><span>Generative reshoot</span></figcaption>
+      <video controls muted loop playsinline preload="none" poster="assets/risk-story/reshoot.jpg" aria-label="Recorded take and generated camera move showing hallucination" src="assets/risk-story/reshoot.mp4">Your browser cannot play this video. <a href="assets/risk-story/reshoot.mp4">Open the reshoot comparison</a>.</video>
+    </figure>
+    <div class="risk-detail">
+      <p>Hallucinated appearance</p>
+      <div class="risk-faces">
+        <figure><img src="assets/risk-story/captured-detail.jpg" width="256" height="260" loading="lazy" alt="Reference appearance of the performer"><figcaption>Reference</figcaption></figure>
+        <figure><img src="assets/risk-story/generated-detail.jpg" width="256" height="260" loading="lazy" alt="The altered face in the generated reshoot"><figcaption>Generated</figcaption></figure>
+      </div>
+    </div>
+  </div>
+  <div class="capture-generation">
+    <h3>Part real, part generative</h3>
+    <p>Hybrid Cinematography lets filmmakers explore the range between the captured and target camera moves, inspect hallucination risk before generation, and decide what to capture and what to leave to the model.</p>
+    <figure class="slider-motif">
+      <video muted loop playsinline preload="none" poster="assets/risk-story/slider.jpg" aria-label="Rendered slider illustrating the range between captured and target camera moves" src="assets/risk-story/slider.mp4">Your browser cannot play this video. <a href="assets/risk-story/slider.mp4">Open the slider illustration</a>.</video>
+      <figcaption><span>Captured camera move<small>Physical capture</small></span><span>Target camera move<small>Generative reshoot</small></span></figcaption>
+    </figure>
+  </div>
 </section>
 <figure class="project-teaser">
   <a href="assets/teaser.png" aria-label="View the workflow figure at full resolution"><img src="assets/teaser.png" width="2400" height="764" alt="One editable 3D shot plan connects shot planning, AR-guided capture, and review. A slider moves from the captured camera move to the target move, showing missing coverage and resolution or performance deficits before generation."></a>
@@ -90,4 +115,4 @@
     <figure><video muted loop playsinline preload="none" poster="assets/visualizer-previews/hall-cartwheel.jpg" aria-label="Recorded preview of the Cartwheel visualizer" src="assets/visualizer-previews/hall-cartwheel.mp4">Your browser cannot play this video. <a href="assets/visualizer-previews/hall-cartwheel.mp4">Open Cartwheel preview</a>.</video><figcaption>Cartwheel · Recorded preview</figcaption></figure>
   </div>
 </section>
-</main><script src="assets/project-video.js?v=compact-hero1" defer></script><script src="assets/previews.js?v=visualizer-previews1" defer></script></body></html>
+</main><script src="assets/project-video.js?v=compact-hero1" defer></script><script src="assets/previews.js?v=risk-story1" defer></script></body></html>

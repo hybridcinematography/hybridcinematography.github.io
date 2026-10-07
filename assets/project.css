@@ -45,6 +45,25 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .section-heading h2 { font-size: 24px; font-weight: 700; }
 .video-frame { width: 100%; margin-inline: auto; aspect-ratio: 16 / 9; background: #15252d; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 22px rgb(30 110 140 / 12%); }
 .video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+.risk-story { margin-bottom: 34px; padding-bottom: 28px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
+.risk-story .section-heading h2 { flex: 1 1 600px; }
+.risk-example { display: grid; grid-template-columns: 2.2fr 1fr; gap: 24px; align-items: start; }
+.risk-example figure, .slider-motif { margin: 0; min-width: 0; }
+.reshoot-comparison figcaption, .risk-faces { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.reshoot-comparison figcaption, .risk-detail > p { color: var(--ink-dim); font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+.reshoot-comparison figcaption { text-align: center; }
+.reshoot-comparison video { display: block; width: 100%; aspect-ratio: 1000 / 286; border: 1px solid var(--line); border-radius: 6px; }
+.risk-faces img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; }
+.risk-faces figure:last-child img { border-color: #b64045; }
+.risk-faces figcaption { margin-top: 5px; color: var(--ink-dim); font-size: 13px; text-align: center; }
+.capture-generation { margin-top: 24px; }
+.capture-generation h3 { margin: 0 0 8px; font-size: 20px; font-weight: 600; }
+.capture-generation p { color: var(--ink-dim); font-size: 15px; }
+.slider-motif { margin-top: 10px; }
+.slider-motif video { display: block; width: 100%; aspect-ratio: 12 / 1; background: white; }
+.slider-motif figcaption { display: flex; justify-content: space-between; gap: 16px; font-size: 15px; font-weight: 600; }
+.slider-motif figcaption > span:last-child { text-align: right; color: var(--out); }
+.slider-motif small { display: block; color: var(--ink-dim); font-size: 13px; font-weight: 400; }
 .contributions { margin-bottom: 34px; padding-bottom: 28px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
 .contributions h2 { font-size: 24px; font-weight: 700; margin-bottom: 18px; }
 .contributions ol { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 44px; list-style: decimal-leading-zero; margin: 0; padding-left: 28px; }
@@ -109,6 +128,8 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .demo-grid p { font-size: 14px; color: var(--ink-dim); margin-top: 10px; }
 .drone-demo .demo-caption { color: var(--ink-dim); font-size: 13px; margin-top: 14px; }
 @media (max-width: 720px) {
+  .risk-example { grid-template-columns: 1fr; }
+  .risk-faces { max-width: 320px; }
   .contributions ol { grid-template-columns: 1fr; }
   .demo-walkthrough, .demo-grid, .shot-plan dl { grid-template-columns: 1fr; }
   .demo-walkthrough { gap: 16px; padding: 16px; }

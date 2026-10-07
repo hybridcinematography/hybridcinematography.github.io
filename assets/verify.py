@@ -62,6 +62,19 @@ def main():
                 assert (ROOT / urlsplit(video['data-src']).path).stat().st_size < 1_500_000, 'Preview exceeds 1.5 MB budget'
             print(f'PASS: {len(previews)} silent, lazy-loaded thumbnail videos; each under 1.5 MB.')
             assert not {'risk-interactive', 'risk-amount', 'risk-plan', 'risk-recorded', 'risk-requested'} & page.ids, 'Replaced interactive diagrams must not remain'
+            assert text.index('id="video"') < text.index('id="hallucination-risk"') < text.index('class="project-teaser"'), 'Risk introduction must follow the main video and precede the workflow figure'
+            story = [v for v in page.videos if v.get('src', '').startswith('assets/risk-story/')]
+            assert {v['src'] for v in story} == {'assets/risk-story/reshoot.mp4', 'assets/risk-story/slider.mp4'} and len(story) == 2
+            assert 'story-toggle' in page.ids
+            for video in story:
+                assert {'muted', 'loop', 'playsinline', 'poster', 'aria-label'} <= video.keys()
+                assert video.get('preload') == 'none' and 'autoplay' not in video
+                clip = ROOT / video['src']
+                assert clip.read_bytes()[4:8] == b'ftyp' and clip.stat().st_size < 1_500_000
+            assert {p.name for p in (ROOT / 'assets/risk-story').iterdir()} == {
+                'reshoot.mp4', 'reshoot.jpg', 'slider.mp4', 'slider.jpg', 'captured-detail.jpg', 'generated-detail.jpg'
+            }, 'Risk introduction assets must contain only rendered media'
+            print('PASS: risk introduction uses two lightweight recorded illustrations after the main video.')
             factors = [v for v in page.videos if v.get('src', '').startswith('assets/factor-videos/')]
             assert {v.get('src') for v in factors} == {
                 f'assets/factor-videos/{name}.mp4' for name in ('coverage', 'resolution', 'performance')
