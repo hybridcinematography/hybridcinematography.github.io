@@ -10,7 +10,6 @@
 
   const observer = new ResizeObserver(fitOpeningVideo);
   observer.observe(document.querySelector('.project-hero'));
-  observer.observe(document.querySelector('.project-video .section-heading'));
   window.addEventListener('resize', fitOpeningVideo);
   fitOpeningVideo();
 })();

@@ -29,7 +29,6 @@ a:focus-visible { outline-color: var(--blue); }
 sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .affiliations { margin-top: 8px; color: var(--ink-dim); font-size: 14px; }
 .resource-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-.release-note { margin-top: 8px; color: var(--ink-dim); font-size: 14px; }
 .resource { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 8px 16px; border: 1px solid var(--out); border-radius: 4px; color: var(--out); font-size: 14px; font-weight: 600; text-decoration: none; transition: background .15s, color .15s; }
 .resource:hover { color: var(--out); background: var(--blue-tint); text-decoration: none; }
 .resource.primary { background: var(--out); border-color: var(--out); color: white; }
@@ -44,9 +43,6 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .project-video { padding-bottom: 30px; margin-bottom: 34px; border-bottom: 1px solid var(--line); }
 .section-heading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 16px; }
 .section-heading h2 { font-size: 24px; font-weight: 700; }
-.section-heading a { font-size: 14px; font-weight: 600; }
-.project-video .section-heading { margin-bottom: 10px; }
-.project-video .section-heading h2 { font-size: 18px; }
 .video-frame { width: 100%; margin-inline: auto; aspect-ratio: 16 / 9; background: #15252d; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 22px rgb(30 110 140 / 12%); }
 .video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
 .contributions { margin-bottom: 34px; padding-bottom: 28px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
@@ -56,6 +52,9 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .contributions li::marker { color: var(--out); font-weight: 600; }
 .contributions h3 { font-size: 18px; font-weight: 600; line-height: 1.4; margin: 0 0 8px; }
 .contributions p { color: var(--ink-dim); font-size: 15px; }
+.coming-soon { margin-top: 34px; padding-top: 24px; border-top: 1px solid var(--line); }
+.coming-soon h2 { font-size: 22px; font-weight: 700; }
+.coming-soon p { margin-top: 8px; color: var(--ink-dim); font-size: 15px; }
 #video-examples, #video { scroll-margin-top: 28px; }
 .scene { border: 0; border-radius: 0; background: transparent; }
 .scene:hover { text-decoration: none; }
