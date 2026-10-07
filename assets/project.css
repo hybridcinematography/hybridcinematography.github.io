@@ -54,6 +54,12 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .scene:hover { text-decoration: none; }
 .scene .thumb { border: 1px solid var(--line); border-radius: 8px; background: var(--blue-tint); transition: box-shadow .2s, transform .2s; }
 .scene:hover .thumb { transform: translateY(-2px); box-shadow: 0 6px 18px rgb(30 110 140 / 14%); }
+.scene .thumb { position: relative; }
+.thumb video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: var(--blue-tint); opacity: 0; pointer-events: none; }
+.thumb video.has-preview { opacity: 1; }
+.preview-controls { display: flex; justify-content: flex-end; margin: 0 0 16px; }
+.preview-toggle { cursor: pointer; background: white; font-family: inherit; }
+.preview-toggle[hidden] { display: none; }
 .scene:hover h3 { color: var(--out); }
 .scene-info { flex-wrap: wrap; gap: 8px; padding: 10px 0 0; }
 .scene-info h3 { margin: 0 0 3px; font-size: 16px; line-height: 1.4; font-weight: 600; }
