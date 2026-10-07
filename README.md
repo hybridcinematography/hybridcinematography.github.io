@@ -26,4 +26,4 @@ Publish this folder's contents at the repository root, with Pages configured to 
 
 ## Content
 
-The homepage contains the paper's title, authors, abstract, workflow figure, illustrative geometric animations, and video demonstrations. The full interactive scene viewer and its reconstruction payloads are not part of this public site.
+The homepage contains the paper's title, authors, abstract, workflow figure, three rendered, looping geometric animations, and video demonstrations. The full interactive scene viewer, its reconstruction payloads, and the former slider-driven animation code are not part of the current site.

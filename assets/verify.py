@@ -28,7 +28,7 @@ class Page(HTMLParser):
 def main():
     assert {'index.html', 'README.md', 'assets'} <= {p.name for p in ROOT.iterdir()}, 'Missing site entrypoint or assets'
     assert not (ROOT / 'assets/scenes').exists(), 'Interactive scene payloads must remain private'
-    for name in ('viewer.js', 'viewer.css', 'manifest.json'):
+    for name in ('viewer.js', 'viewer.css', 'manifest.json', 'risk-explainer.js'):
         assert not (ROOT / 'assets' / name).exists(), f'Private viewer asset is present: {name}'
     pages = [ROOT / 'index.html', *sorted((ROOT / 'assets/videos').glob('*.html'))]
     for path in pages:
@@ -60,7 +60,17 @@ def main():
                 assert video.get('aria-hidden') == 'true' and video.get('tabindex') == '-1'
                 assert (ROOT / urlsplit(video['data-src']).path).stat().st_size < 1_500_000, 'Preview exceeds 1.5 MB budget'
             print(f'PASS: {len(previews)} silent, lazy-loaded thumbnail videos; each under 1.5 MB.')
-            demo = [v for v in page.videos if 'data-src' not in v]
+            assert not {'risk-interactive', 'risk-amount', 'risk-plan', 'risk-recorded', 'risk-requested'} & page.ids, 'Replaced interactive diagrams must not remain'
+            factors = [v for v in page.videos if v.get('src', '').startswith('assets/factor-videos/')]
+            assert {v.get('src') for v in factors} == {
+                f'assets/factor-videos/{name}.mp4' for name in ('coverage', 'resolution', 'performance')
+            } and len(factors) == 3, 'Expected three rendered factor animations'
+            for video in factors:
+                assert {'controls', 'muted', 'loop', 'playsinline', 'poster', 'aria-label'} <= video.keys()
+                assert video.get('preload') == 'none' and 'autoplay' not in video
+                assert (ROOT / video['src']).read_bytes()[4:8] == b'ftyp'
+            print('PASS: 3 rendered factor videos with silent loops, posters, and playback controls; interactive animation code removed.')
+            demo = [v for v in page.videos if v.get('src', '').startswith('assets/drone-demo/')]
             assert {v.get('src') for v in demo} == {
                 f'assets/drone-demo/{name}.mp4'
                 for name in ('walkthrough', 'capture', 'condition', 'gen3c', 'gemini')

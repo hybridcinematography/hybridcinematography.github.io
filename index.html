@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hybrid Cinematography: Previsualizing and Managing Hallucination Risk in Generative Video Reshooting</title><meta name="description" content="Hybrid Cinematography connects physical capture and generative video reshooting. Explore the workflow, geometric explanations, and video examples.">
 <meta name="theme-color" content="#1e6e8c">
-<link rel="stylesheet" href="assets/base.css"><link rel="stylesheet" href="assets/gallery.css"><link rel="stylesheet" href="assets/project.css?v=coming-soon1"></head><body>
+<link rel="stylesheet" href="assets/base.css"><link rel="stylesheet" href="assets/gallery.css"><link rel="stylesheet" href="assets/project.css?v=factor-videos1"></head><body>
 <a class="skip-link" href="#main">Skip to content</a>
 <main class="gallery" id="main">
 <header class="project-hero">
@@ -24,26 +24,22 @@
 <section class="risk-explainer" id="risk-explainer" aria-labelledby="risk-heading">
   <div class="section-heading"><h2 id="risk-heading">What would the model have to invent?</h2></div>
   <p class="risk-intro">Keep the recorded take. Change the camera. Explore how a reshoot can ask for evidence the take does not contain.</p>
-  <div id="risk-interactive" hidden>
-    <div class="risk-modes" role="group" aria-label="Hallucination risk factor">
-      <button type="button" data-factor="coverage" aria-pressed="true"><b>01 · Coverage</b><span>Unseen surfaces</span></button>
-      <button type="button" data-factor="resolution" aria-pressed="false"><b>02 · Resolution</b><span>Missing details</span></button>
-      <button type="button" data-factor="performance" aria-pressed="false"><b>03 · Performance</b><span>An unrecorded angle</span></button>
-    </div>
-    <p class="risk-explanation" id="risk-explanation"></p>
-    <div class="risk-diagrams">
-      <figure class="risk-plan"><figcaption>Camera geometry <span>Top view</span></figcaption><svg id="risk-plan" viewBox="0 0 420 300" role="img" aria-label="Top view of the recorded and requested cameras"></svg></figure>
-      <figure><figcaption><i class="risk-camera recorded"></i> Recorded view</figcaption><svg id="risk-recorded" viewBox="0 0 420 260" role="img" aria-label="The fixed recorded view"></svg></figure>
-      <figure><figcaption><i class="risk-camera requested"></i> Requested view</figcaption><svg id="risk-requested" viewBox="0 0 420 260" role="img" aria-label="The requested view and its missing evidence"></svg></figure>
-    </div>
-    <div class="risk-controls">
-      <div class="risk-slider"><div class="risk-slider-heading"><label for="risk-amount" id="risk-control-label">Move the camera sideways</label><output id="risk-value" for="risk-amount"></output></div><input type="range" id="risk-amount" min="0" max="100" step="1" value="45" aria-describedby="risk-explanation risk-cue"><div class="risk-endpoints"><span>Recorded camera</span><span id="risk-endpoint">Move sideways →</span></div></div>
-      <div class="risk-actions"><button class="resource" type="button" id="risk-animate" aria-pressed="false">Animate</button><button class="resource" type="button" id="risk-reset">Reset</button></div>
-    </div>
-    <p class="risk-cue" id="risk-cue" aria-live="polite"></p>
+  <div class="preview-controls"><button class="resource preview-toggle" id="factor-toggle" type="button" hidden>Pause animations</button></div>
+  <div class="factor-videos">
+    <figure>
+      <figcaption><span class="demo-step">01 · Coverage</span><h3>Unseen surfaces</h3><p>Moving sideways can reveal surfaces the recorded camera never saw. Red hatching marks this missing coverage.</p></figcaption>
+      <video controls muted loop playsinline preload="none" poster="assets/factor-videos/coverage.jpg" aria-label="Coverage animation" src="assets/factor-videos/coverage.mp4">Your browser cannot play this video. <a href="assets/factor-videos/coverage.mp4">Open coverage animation</a>.</video>
+    </figure>
+    <figure>
+      <figcaption><span class="demo-step">02 · Resolution</span><h3>Missing details</h3><p>Moving closer spreads the same recorded samples over a larger image area. The model must invent the missing detail.</p></figcaption>
+      <video controls muted loop playsinline preload="none" poster="assets/factor-videos/resolution.jpg" aria-label="Resolution animation" src="assets/factor-videos/resolution.mp4">Your browser cannot play this video. <a href="assets/factor-videos/resolution.mp4">Open resolution animation</a>.</video>
+    </figure>
+    <figure>
+      <figcaption><span class="demo-step">03 · Performance</span><h3>An unrecorded angle</h3><p>Orbiting a performer reveals a side that was not recorded at that instant. Earlier or later poses cannot supply that same performance.</p></figcaption>
+      <video controls muted loop playsinline preload="none" poster="assets/factor-videos/performance.jpg" aria-label="Performance animation" src="assets/factor-videos/performance.mp4">Your browser cannot play this video. <a href="assets/factor-videos/performance.mp4">Open performance animation</a>.</video>
+    </figure>
   </div>
-  <noscript><p>Enable JavaScript to move the camera and explore coverage, resolution, and performance.</p></noscript>
-  <p class="risk-note">Illustrative geometry, based on the explanations in the project video. These diagrams illustrate one factor at a time.</p>
+  <p class="risk-note">Illustrative geometry from the project video, showing one factor at a time.</p>
   <a class="risk-follow" href="assets/videos/walking.html">See how revising the move changes the Walking reshoot <span aria-hidden="true">↗</span></a>
 </section>
 <section class="drone-demo" id="drone-demo" aria-labelledby="drone-heading">
@@ -78,4 +74,4 @@
 <a class="scene" href="assets/videos/revise_the_move.html"><div class="thumb"><img src="assets/videos/revise_the_move.jpg?v=hd1" alt="Revise the move — balanced reshoot preview" loading="lazy"><video data-src="assets/previews/video-revise_the_move.mp4?v=hd1" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div><div class="scene-info"><div><h3>Revise the move</h3><p>Balanced reshoot · 3 videos</p></div><span class="open">Watch videos ↗</span></div></a>
 <a class="scene" href="assets/videos/walking.html"><div class="thumb"><img src="assets/videos/walking.jpg?v=hd1" alt="Walking — revised reshoot preview" loading="lazy"><video data-src="assets/previews/video-walking.mp4?v=hd1" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div><div class="scene-info"><div><h3>Walking</h3><p>Revised reshoot · 3 videos</p></div><span class="open">Watch videos ↗</span></div></a></div></section>
 <!-- video examples end -->
-</main><script src="assets/previews.js" defer></script><script src="assets/risk-explainer.js" defer></script></body></html>
+</main><script src="assets/previews.js?v=factor-videos1" defer></script></body></html>
