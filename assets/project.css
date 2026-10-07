@@ -29,6 +29,7 @@ a:focus-visible { outline-color: var(--blue); }
 sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .affiliations { margin-top: 8px; color: var(--ink-dim); font-size: 14px; }
 .resource-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.release-note { margin-top: 14px; color: var(--ink-dim); font-size: 14px; }
 .resource { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 8px 16px; border: 1px solid var(--out); border-radius: 4px; color: var(--out); font-size: 14px; font-weight: 600; text-decoration: none; transition: background .15s, color .15s; }
 .resource:hover { color: var(--out); background: var(--blue-tint); text-decoration: none; }
 .resource.primary { background: var(--out); border-color: var(--out); color: white; }
@@ -67,7 +68,6 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .video-section { margin-top: 0; padding-top: 0; border-top: 0; }
 .risk-explainer { margin: 0 0 42px; padding-bottom: 32px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
 .risk-explainer .section-heading { margin-bottom: 8px; }
-.risk-kicker { color: var(--out); font-size: 14px; }
 .risk-intro { color: var(--ink-dim); font-size: 16px; margin-bottom: 20px; }
 .risk-modes { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
 .risk-modes button { background: white; border: 0; border-right: 1px solid var(--line); color: var(--ink-dim); font: inherit; text-align: left; padding: 12px 16px; cursor: pointer; }
