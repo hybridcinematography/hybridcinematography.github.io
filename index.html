@@ -50,19 +50,19 @@
   <a class="risk-follow" href="assets/videos/walking.html">See how revising the move changes the Walking reshoot <span aria-hidden="true">↗</span></a>
 </section>
 <section class="drone-demo" id="drone-demo" aria-labelledby="drone-heading">
-  <p class="eyebrow">An on-set example</p><h2 id="drone-heading">From a handheld take to a drone-like tour</h2>
-  <p class="demo-intro">Fly through a hole in a Connect Four board, then continue around the room. The phone cannot follow that path physically, so we capture an offset pass over the board and plan the fly-through as a generative reshoot.</p>
+  <p class="eyebrow">An on-set example</p><h2 id="drone-heading">Planning a shot the phone cannot capture</h2>
+  <p class="demo-intro">Some cinematic shots are difficult to execute by hand. Here, we plan a dolly zoom followed by a push through a hole in a Connect Four board. The phone cannot fit through the opening, so we plan this move as a generative reshoot.</p>
   <div class="demo-walkthrough">
-    <div><h3>Plan, capture, and review</h3><p>Place camera keyframes in AR, shape the timing of the move, then follow the guidance during capture. In review, inspect the gap between the take and the plan, and record a pickup where coverage is missing.</p><p><strong>Live capture · LiDAR.</strong> The app builds its 3D proxy in real time from LiDAR depth and tracked camera poses, so the take can be reviewed on set.</p><p class="demo-caption">Narrated walkthrough · 1:06</p></div>
+    <div><h3>Plan, capture, and review</h3><p>After planning the shot, we capture an offset pass over the board. We then scrub between the captured and target camera moves to inspect hallucination risk and record guided pickups where coverage is missing.</p><p><strong>Live capture · LiDAR.</strong> The app builds its 3D proxy in real time from LiDAR depth and tracked camera poses, so the take can be reviewed on set.</p><p class="demo-caption">Narrated walkthrough · 1:06</p></div>
     <video controls playsinline preload="none" poster="assets/drone-demo/walkthrough.jpg" aria-label="Drone tour planning, capture, and review walkthrough" src="assets/drone-demo/walkthrough.mp4"><track kind="captions" src="assets/drone-demo/walkthrough.vtt" srclang="en" label="English">Your browser cannot play this video. <a href="assets/drone-demo/walkthrough.mp4">Open walkthrough</a>.</video>
   </div>
   <div class="shot-plan">
     <h3>Author the camera in space and time</h3>
     <dl>
-      <div><dt>Space · Where the camera goes</dt><dd>Set the path, viewing direction, and framing, including the fly-through.</dd></div>
-      <div><dt>Time · When it gets there</dt><dd>Set the pace, slowdowns, and holds along that path. The recorded performance keeps its original timing.</dd></div>
+      <div><dt>Space · Where the camera goes</dt><dd>Place keyframe A at the start, dolly zoom into B, set C just before the hole, and push through to D. These AR keyframes specify the camera's position, viewing direction, and framing.</dd></div>
+      <div><dt>Time · When it gets there</dt><dd>Set the total duration, then adjust speed and easing along each segment to speed up or slow down the camera. The recorded performance keeps its original timing.</dd></div>
     </dl>
-    <p>The proxy is rendered from the target camera at every output frame. This <strong>point-cloud conditioning video encodes both space and time</strong> for Vista4D, Gen3C, or Gemini, alongside any source footage and masks required by the model.</p>
+    <p>Expressing the exact path, framing, and changing pace in a text prompt can be cumbersome. The shot plan specifies them directly. Rendering the proxy along that plan produces a <strong>point-cloud conditioning video that encodes both space and time</strong> for Vista4D, Gen3C, or Gemini, alongside any source footage and masks required by the model.</p>
   </div>
   <div class="demo-grid">
     <figure><figcaption><span class="demo-step">01 · Input</span><h3>Recorded handheld video</h3></figcaption><video controls playsinline preload="none" poster="assets/drone-demo/capture.jpg" aria-label="Recorded handheld input for the drone tour" src="assets/drone-demo/capture.mp4">Your browser cannot play this video. <a href="assets/drone-demo/capture.mp4">Open recorded input</a>.</video><p>The actual camera passes over the board. Shown at the recorded timing.</p></figure>
