@@ -1,0 +1,16 @@
+:root{color-scheme:light;--ground:#fff;--surface:#fff;--line:#d5dce5;--ink:#141a22;--ink-dim:#5a6674;--out:#2f6fd0;--font-d:"Archivo",system-ui,sans-serif;--font-b:"IBM Plex Sans",system-ui,sans-serif;--font-m:"IBM Plex Mono",ui-monospace,monospace}
+*{box-sizing:border-box} [hidden]{display:none!important}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.45 var(--font-b);-webkit-font-smoothing:antialiased}
+a{color:var(--out);text-underline-offset:4px} a:hover{color:#17488f}
+button,input{font:inherit} button,input[type=range]{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--out);outline-offset:4px}
+button{border:1px solid var(--line);border-radius:7px;background:transparent;color:var(--ink);padding:7px 12px;font-size:14px;min-height:36px}
+button:hover{border-color:var(--out)}button:disabled{opacity:.45;cursor:default}
+button[aria-pressed=true]{border-color:var(--out);color:var(--ink);font-weight:600}
+h1,h2,p{margin:0}h1{font-family:var(--font-d);font-weight:800;font-size:clamp(20px,2vw,24px);letter-spacing:-.02em}h2{font-family:var(--font-d);font-size:16px;font-weight:600}
+.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-dim);margin-bottom:5px}
+.caption{font-size:13px;color:var(--ink-dim);margin-top:10px}
+input[type=range]{appearance:none;-webkit-appearance:none;display:block;width:100%;height:26px;margin:4px 0;background:transparent}
+input[type=range]::-webkit-slider-runnable-track{height:6px;border-radius:4px;background:linear-gradient(to right,var(--fill,var(--out)) var(--p,100%),var(--line) var(--p,100%))}
+input[type=range]::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#fff;border:1px solid #8d9aab;margin-top:-6px}
+input[type=range]::-moz-range-track{height:6px;background:var(--line);border-radius:4px}input[type=range]::-moz-range-progress{height:6px;background:var(--out)}input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:1px solid #8d9aab}

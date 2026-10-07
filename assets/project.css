@@ -46,12 +46,7 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .section-heading a { font-size: 14px; font-weight: 600; }
 .video-frame { aspect-ratio: 16 / 9; background: #15252d; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 22px rgb(30 110 140 / 12%); }
 .video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
-#scenes, #video-examples, #video { scroll-margin-top: 28px; }
-.gallery-header { border-bottom: 0; padding-bottom: 0; }
-.gallery-header h2 { font-size: 24px; font-weight: 700; letter-spacing: -.02em; }
-.gallery-count { font-size: 14px; }
-.scene-intro { font-size: 16px; color: var(--ink-dim); margin-top: 12px; }
-.scene-intro strong { color: var(--ink); }
+#video-examples, #video { scroll-margin-top: 28px; }
 .scene { border: 0; border-radius: 0; background: transparent; }
 .scene:hover { text-decoration: none; }
 .scene .thumb { border: 1px solid var(--line); border-radius: 8px; background: var(--blue-tint); transition: box-shadow .2s, transform .2s; }
@@ -65,15 +60,11 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .scene:hover h3 { color: var(--out); }
 .scene-info { flex-wrap: wrap; gap: 8px; padding: 10px 0 0; }
 .scene-info h3 { margin: 0 0 3px; font-size: 16px; line-height: 1.4; font-weight: 600; }
-.scene-info p, .scene-number { font-size: 13px; }
+.scene-info p { font-size: 13px; }
 .open { font-size: 14px; }
-.guide-intro p, .guide li span, .reading p, .video-heading p { font-size: 16px; }
-.guide li b { font-size: 16px; }
-.guide-foot { font-size: 14px; }
-.reading h2 { font-size: 20px; }
-.reading p { line-height: 1.65; }
+.video-heading p { font-size: 16px; }
 .video-heading h2 { font-size: 24px; font-weight: 700; }
-.video-section { margin-top: 42px; padding-top: 30px; }
+.video-section { margin-top: 0; padding-top: 0; border-top: 0; }
 .risk-explainer { margin: 0 0 42px; padding-bottom: 32px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
 .risk-explainer .section-heading { margin-bottom: 8px; }
 .risk-kicker { color: var(--out); font-size: 14px; }
