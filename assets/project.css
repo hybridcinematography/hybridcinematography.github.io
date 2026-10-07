@@ -50,6 +50,8 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .gallery-header { border-bottom: 0; padding-bottom: 0; }
 .gallery-header h2 { font-size: 24px; font-weight: 700; letter-spacing: -.02em; }
 .gallery-count { font-size: 14px; }
+.scene-intro { font-size: 16px; color: var(--ink-dim); margin-top: 12px; }
+.scene-intro strong { color: var(--ink); }
 .scene { border: 0; border-radius: 0; background: transparent; }
 .scene:hover { text-decoration: none; }
 .scene .thumb { border: 1px solid var(--line); border-radius: 8px; background: var(--blue-tint); transition: box-shadow .2s, transform .2s; }
@@ -109,14 +111,21 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .demo-walkthrough { display: grid; grid-template-columns: 1fr 1.5fr; gap: 28px; align-items: center; padding: 20px; background: var(--blue-tint); border: 1px solid var(--line); border-radius: 8px; margin-bottom: 30px; }
 .drone-demo h3 { font-size: 18px; font-weight: 600; margin: 0 0 10px; }
 .demo-walkthrough p { font-size: 15px; line-height: 1.6; }
+.demo-walkthrough p + p { margin-top: 12px; }
 .drone-demo video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #101316; border-radius: 6px; }
+.shot-plan { margin-bottom: 28px; }
+.shot-plan dl { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 14px 0; }
+.shot-plan dl > div { border-left: 3px solid var(--out); padding-left: 14px; }
+.shot-plan dt { color: var(--out); font-size: 16px; font-weight: 600; }
+.shot-plan dd { margin: 4px 0 0; color: var(--ink-dim); font-size: 15px; }
+.shot-plan > p { font-size: 15px; }
 .demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 22px; }
 .demo-grid figure { margin: 0; min-width: 0; }
 .demo-step { display: block; color: var(--out); font-size: 13px; font-weight: 600; margin-bottom: 4px; }
 .demo-grid p { font-size: 14px; color: var(--ink-dim); margin-top: 10px; }
 .drone-demo .demo-caption { color: var(--ink-dim); font-size: 13px; margin-top: 14px; }
 @media (max-width: 720px) {
-  .demo-walkthrough, .demo-grid { grid-template-columns: 1fr; }
+  .demo-walkthrough, .demo-grid, .shot-plan dl { grid-template-columns: 1fr; }
   .demo-walkthrough { gap: 16px; padding: 16px; }
   .risk-diagrams { grid-template-columns: 1fr 1fr; gap: 14px; }
   .risk-diagrams .risk-plan { grid-column: 1 / -1; width: min(100%, 300px); justify-self: center; }
