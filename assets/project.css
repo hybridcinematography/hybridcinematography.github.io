@@ -49,6 +49,13 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .project-video .section-heading h2 { font-size: 18px; }
 .video-frame { width: 100%; margin-inline: auto; aspect-ratio: 16 / 9; background: #15252d; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 22px rgb(30 110 140 / 12%); }
 .video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
+.contributions { margin-bottom: 34px; padding-bottom: 28px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
+.contributions h2 { font-size: 24px; font-weight: 700; margin-bottom: 18px; }
+.contributions ol { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 44px; list-style: decimal-leading-zero; margin: 0; padding-left: 28px; }
+.contributions li { padding-left: 6px; }
+.contributions li::marker { color: var(--out); font-weight: 600; }
+.contributions h3 { font-size: 18px; font-weight: 600; line-height: 1.4; margin: 0 0 8px; }
+.contributions p { color: var(--ink-dim); font-size: 15px; }
 #video-examples, #video { scroll-margin-top: 28px; }
 .scene { border: 0; border-radius: 0; background: transparent; }
 .scene:hover { text-decoration: none; }
@@ -98,6 +105,7 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .demo-grid p { font-size: 14px; color: var(--ink-dim); margin-top: 10px; }
 .drone-demo .demo-caption { color: var(--ink-dim); font-size: 13px; margin-top: 14px; }
 @media (max-width: 720px) {
+  .contributions ol { grid-template-columns: 1fr; }
   .demo-walkthrough, .demo-grid, .shot-plan dl { grid-template-columns: 1fr; }
   .demo-walkthrough { gap: 16px; padding: 16px; }
   .factor-videos figure { grid-template-columns: 1fr; gap: 12px; }
