@@ -9,7 +9,7 @@
   <h1>Hybrid Cinematography: Previsualizing and Managing Hallucination Risk in Generative Video Reshooting</h1>
   <p class="authors"><span><a href="https://trannhan.com">Nhan (Nathan) Tran</a><sup>1</sup></span><span><a href="https://nealwadhwa.com/">Neal Wadhwa</a><sup>2</sup></span><span><a href="https://www.cs.cornell.edu/abe/group/members">Abe Davis</a><sup>1</sup></span><span><a href="https://sstojanov.github.io/">Stefan Stojanov</a><sup>2</sup></span></p>
   <p class="affiliations"><span><sup>1</sup> Cornell University</span><span><sup>2</sup> Google Research</span></p>
-  <nav class="resource-links" aria-label="Project resources"><a class="resource primary" href="#video"><span aria-hidden="true">▷</span> Watch video</a><a class="resource" href="#scenes"><span aria-hidden="true">▦</span> Interactive scenes</a><a class="resource" href="#video-examples">Video examples</a></nav>
+  <nav class="resource-links" aria-label="Project resources"><a class="resource primary" href="#video"><span aria-hidden="true">▷</span> Watch video</a><a class="resource" href="#drone-demo">On-set demo</a><a class="resource" href="#scenes"><span aria-hidden="true">▦</span> Interactive scenes</a><a class="resource" href="#video-examples">Video examples</a></nav>
 </header>
 <section class="project-video" id="video" aria-labelledby="project-video-heading">
   <div class="section-heading"><h2 id="project-video-heading">Project video</h2><a href="https://youtu.be/Y9uDFzBZXWE">Watch on YouTube</a></div>
@@ -20,6 +20,46 @@
   <figcaption>We present <strong>Hybrid Cinematography</strong>, a workflow connecting capture and generative post-production, built around one editable 3D shot plan that every stage reads (left). We demonstrate the workflow in a mobile augmented reality (AR) app. <strong>(a)</strong> Before or after capture, filmmakers plan the target move as keyframes by walking the scene, then set its timing. <strong>(b)</strong> In capture, the same plan drives the AR guidance. <strong>(c)</strong> In review, a previsualization (previs) checks the recorded take against that plan and marks what the model would have to invent, its <em>hallucination risk</em>. Every move between the captured move and the target move is a possible reshoot, asking the model to invent what the take does not support. Filmmakers navigate that range with a slider and see the risk of each move before anything is generated (right). They can then revise the move, capture more, re-time, or knowingly accept hallucination, while still on set.</figcaption>
 </figure>
 <section class="abstract" aria-labelledby="abstract-heading"><h2 id="abstract-heading">Abstract</h2><p>On a film set, the camera move is committed during a take. Generative video reshooting lets filmmakers change it afterward, but may require hallucinating unrecorded content, a gap sometimes discovered only after leaving the set. We present Hybrid Cinematography, a workflow that bridges physical capture and generative reshooting to manage hallucination risk while filmmakers can still act on it. Using an editable 3D shot plan and a proxy of the take, our previsualization evaluates hallucination risk in real time. Seeing where the take lacks support, filmmakers can iteratively adjust the plan, explore moves that balance capture and generation, shoot guided pickups, or knowingly accept hallucination. We demonstrate the workflow through a mobile augmented reality application for on-set planning, capture, and review, and an offline pipeline for existing video. A study with experienced filmmakers reveals how previsualizing risk informs camera decisions and exposes tensions between creative intent and generative hallucination.</p></section>
+<section class="risk-explainer" id="risk-explainer" aria-labelledby="risk-heading">
+  <div class="section-heading"><h2 id="risk-heading">What would the model have to invent?</h2><span class="risk-kicker">Try the three factors</span></div>
+  <p class="risk-intro">Keep the recorded take. Change the camera. Explore how a reshoot can ask for evidence the take does not contain.</p>
+  <div id="risk-interactive" hidden>
+    <div class="risk-modes" role="group" aria-label="Hallucination risk factor">
+      <button type="button" data-factor="coverage" aria-pressed="true"><b>01 · Coverage</b><span>Unseen surfaces</span></button>
+      <button type="button" data-factor="resolution" aria-pressed="false"><b>02 · Resolution</b><span>Missing details</span></button>
+      <button type="button" data-factor="performance" aria-pressed="false"><b>03 · Performance</b><span>An unrecorded angle</span></button>
+    </div>
+    <p class="risk-explanation" id="risk-explanation"></p>
+    <div class="risk-diagrams">
+      <figure class="risk-plan"><figcaption>Camera geometry <span>Top view</span></figcaption><svg id="risk-plan" viewBox="0 0 420 300" role="img" aria-label="Top view of the recorded and requested cameras"></svg></figure>
+      <figure><figcaption><i class="risk-camera recorded"></i> Recorded view</figcaption><svg id="risk-recorded" viewBox="0 0 420 260" role="img" aria-label="The fixed recorded view"></svg></figure>
+      <figure><figcaption><i class="risk-camera requested"></i> Requested view</figcaption><svg id="risk-requested" viewBox="0 0 420 260" role="img" aria-label="The requested view and its missing evidence"></svg></figure>
+    </div>
+    <div class="risk-controls">
+      <div class="risk-slider"><div class="risk-slider-heading"><label for="risk-amount" id="risk-control-label">Move the camera sideways</label><output id="risk-value" for="risk-amount"></output></div><input type="range" id="risk-amount" min="0" max="100" step="1" value="45" aria-describedby="risk-explanation risk-cue"><div class="risk-endpoints"><span>Recorded camera</span><span id="risk-endpoint">Move sideways →</span></div></div>
+      <div class="risk-actions"><button class="resource" type="button" id="risk-animate" aria-pressed="false">Animate</button><button class="resource" type="button" id="risk-reset">Reset</button></div>
+    </div>
+    <p class="risk-cue" id="risk-cue" aria-live="polite"></p>
+  </div>
+  <noscript><p>Enable JavaScript to move the camera and explore coverage, resolution, and performance.</p></noscript>
+  <p class="risk-note">Illustrative geometry, based on the explanations in the project video. These diagrams isolate one factor at a time; the interactive scenes below evaluate support in an estimated 3D proxy.</p>
+  <a class="risk-follow" href="assets/videos/walking.html">See how revising the move changes the Walking reshoot <span aria-hidden="true">↗</span></a>
+</section>
+<section class="drone-demo" id="drone-demo" aria-labelledby="drone-heading">
+  <p class="eyebrow">An on-set example</p><h2 id="drone-heading">From a handheld take to a drone-like tour</h2>
+  <p class="demo-intro">Fly through a hole in a Connect Four board, then continue around the room. The phone cannot follow that path physically, so we capture an offset pass over the board and plan the fly-through as a generative reshoot.</p>
+  <div class="demo-walkthrough">
+    <div><h3>Plan, capture, and review</h3><p>Place camera keyframes in AR, shape the timing of the move, then follow the guidance during capture. In review, inspect the gap between the take and the plan, and record a pickup where coverage is missing.</p><p class="demo-caption">Narrated walkthrough · 1:06</p></div>
+    <video controls playsinline preload="none" poster="assets/drone-demo/walkthrough.jpg" aria-label="Drone tour planning, capture, and review walkthrough" src="assets/drone-demo/walkthrough.mp4"><track kind="captions" src="assets/drone-demo/walkthrough.vtt" srclang="en" label="English">Your browser cannot play this video. <a href="assets/drone-demo/walkthrough.mp4">Open walkthrough</a>.</video>
+  </div>
+  <div class="demo-grid">
+    <figure><figcaption><span class="demo-step">01 · Input</span><h3>Recorded handheld video</h3></figcaption><video controls playsinline preload="none" poster="assets/drone-demo/capture.jpg" aria-label="Recorded handheld input for the drone tour" src="assets/drone-demo/capture.mp4">Your browser cannot play this video. <a href="assets/drone-demo/capture.mp4">Open recorded input</a>.</video><p>The actual camera passes over the board. Shown at the recorded timing.</p></figure>
+    <figure><figcaption><span class="demo-step">02 · Condition</span><h3>The plan in space and time</h3></figcaption><video controls playsinline preload="none" poster="assets/drone-demo/condition.jpg" aria-label="Point-cloud condition with the planned camera path and authored timing" src="assets/drone-demo/condition.mp4">Your browser cannot play this video. <a href="assets/drone-demo/condition.mp4">Open point-cloud condition</a>.</video><p>A point-cloud render follows the planned path, including the fly-through, at the authored timing.</p></figure>
+    <figure><figcaption><span class="demo-step">03 · Generated output</span><h3>Gen3C</h3></figcaption><video controls playsinline preload="none" poster="assets/drone-demo/gen3c.jpg" aria-label="Gen3C generated drone tour" src="assets/drone-demo/gen3c.mp4">Your browser cannot play this video. <a href="assets/drone-demo/gen3c.mp4">Open Gen3C output</a>.</video><p>Reshoot on the authored camera, from the on-set demo. <a href="https://github.com/nv-tlabs/GEN3C">Gen3C code ↗</a></p></figure>
+    <figure><figcaption><span class="demo-step">03 · Generated output</span><h3>Gemini Omni Flash</h3></figcaption><video controls playsinline preload="none" poster="assets/drone-demo/gemini.jpg" aria-label="Gemini Omni Flash generated drone tour" src="assets/drone-demo/gemini.mp4">Your browser cannot play this video. <a href="assets/drone-demo/gemini.mp4">Open Gemini Omni Flash output</a>.</video><p>Reshoot from the point-cloud condition, as shown in the presentation.</p></figure>
+  </div>
+  <p class="demo-caption">Each clip retains its own timing. The two outputs are separate model runs; play them individually or expand a video to inspect the result.</p>
+</section>
 <div class="gallery-header" id="scenes"><div><p class="eyebrow">Explore the previsualization</p><h2>Interactive scenes</h2></div><span class="gallery-count">07 scenes</span></div>
 <section class="guide" id="guide" aria-label="Quick guide"><div class="guide-intro"><h2>A quick way to explore</h2><p>Open a scene to explore its camera moves and diagnostic overlays. Each begins with the same edited target move and slider setting, λ = 0.8.</p></div><ol><li><b>Play or scrub</b><span>Inspect the take at different moments.</span></li><li><b>Move the slider</b><span>Compare the captured and target moves.</span></li><li><b>Inspect the warnings</b><span>Click the preview to explain a region, or toggle overlays.</span></li></ol><p class="guide-foot">Use <b>Reset to paper view</b> to start over. Additional timing and display options are under <b>More controls</b>.</p></section>
 <div class="preview-controls"><button class="resource preview-toggle" id="preview-toggle" type="button" hidden>Pause previews</button></div>
@@ -41,4 +81,4 @@
 <a class="scene" href="assets/videos/walking.html"><div class="thumb"><img src="assets/videos/walking.jpg" alt="Walking — revised reshoot preview" loading="lazy"><video data-src="assets/previews/video-walking.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div><div class="scene-info"><div><h3>Walking</h3><p>Revised reshoot · 3 videos</p></div><span class="open">Watch videos ↗</span></div></a></div></section>
 <!-- video examples end -->
 <footer><p>Scenes run in your browser. Open one at a time; each prepares its embedded video before playback. Interactive previews require JavaScript, WebGL, H.264 video, and built-in gzip decompression.</p><p>Video examples retain the resolution of the supplemental materials. Diagnostic overlays describe support in an estimated 3D proxy; they do not guarantee the quality of a generated reshoot.</p></footer>
-</main><script src="assets/previews.js" defer></script></body></html>
+</main><script src="assets/previews.js" defer></script><script src="assets/risk-explainer.js" defer></script></body></html>

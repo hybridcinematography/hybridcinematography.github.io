@@ -1,0 +1,32 @@
+[
+  {
+    "file": "walkthrough.mp4",
+    "source": "media73.mp4",
+    "source_sha256": "2846187196d31c66699f3d8e5c7af75ebfd72e22ab7cb90d2e295829e1b0fa56",
+    "note": "Slides 81/83 embedded demo_with_narration_sep2026; first 66 seconds, through pickup guidance."
+  },
+  {
+    "file": "capture.mp4",
+    "source": "media77.mp4",
+    "source_sha256": "f44cde18b6cdd838db45ca40b669ff50c16409bc9beb0c021cd89ef0114077ae",
+    "note": "Slide 82 embedded source_native_30fps_A983D3B0-A0CF-4639-84D2-851A929EC3AB.mp4."
+  },
+  {
+    "file": "condition.mp4",
+    "source": "pi3x_conditioning_buffer_authored_clock.mp4",
+    "source_sha256": "98ebd6f05f05c24de5d7de24aad7c1ded0bbda9afb0145c9c10a2c83433e930e",
+    "note": "Slide 82 conditioning reference, original point-cloud export with authored timing."
+  },
+  {
+    "file": "gen3c.mp4",
+    "source": "source_uniform_vs_gen3c_authored_clock.mp4",
+    "source_sha256": "fbf2bce4cc59386f5f2b5dfea6d2bc26f770ab0798220946fb619064a5cea8d5",
+    "note": "Generated right-hand panel of the Gen3C demo comparison; source panel and title strip excluded."
+  },
+  {
+    "file": "gemini.mp4",
+    "source": "pi3x_conditioning_buffer_authored_clock-clip-1_20260916163839.mp4",
+    "source_sha256": "ac238edd4b6ee049fc716500346849f90e845017db1496b9055c845f7bbeedcc",
+    "note": "Slide 82 Gemini Omni Flash output reference, original export."
+  }
+]

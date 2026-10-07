@@ -73,6 +73,63 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .video-heading h2 { font-size: 24px; font-weight: 700; }
 .video-section { margin-top: 42px; padding-top: 30px; }
 footer { margin-top: 38px; font-size: 14px; line-height: 1.6; }
+.risk-explainer { margin: 0 0 42px; padding-bottom: 32px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
+.risk-explainer .section-heading { margin-bottom: 8px; }
+.risk-kicker { color: var(--out); font-size: 14px; }
+.risk-intro { color: var(--ink-dim); font-size: 16px; margin-bottom: 20px; }
+.risk-modes { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.risk-modes button { background: white; border: 0; border-right: 1px solid var(--line); color: var(--ink-dim); font: inherit; text-align: left; padding: 12px 16px; cursor: pointer; }
+.risk-modes button:last-child { border-right: 0; }
+.risk-modes button b, .risk-modes button span { display: block; }
+.risk-modes button b { font-size: 16px; font-weight: 600; }
+.risk-modes button span { font-size: 13px; margin-top: 2px; }
+.risk-modes button[aria-pressed="true"] { color: var(--out); background: var(--blue-tint); box-shadow: inset 0 -3px var(--out); }
+.risk-explainer button:focus-visible, .risk-explainer input:focus-visible { outline: 2px solid var(--out); outline-offset: -3px; }
+.risk-explanation { margin: 18px 0; min-height: 52px; font-size: 16px; }
+.risk-diagrams { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; align-items: center; }
+.risk-diagrams figure { margin: 0; min-width: 0; }
+.risk-diagrams figcaption { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 600; margin-bottom: 10px; }
+.risk-diagrams figcaption > span { margin-left: auto; color: var(--ink-dim); font-size: 12px; font-weight: 400; }
+.risk-diagrams svg { display: block; width: 100%; border: 1px solid var(--line); border-radius: 6px; background: #fcfdfe; }
+.risk-camera { width: 18px; height: 3px; display: inline-block; background: #303740; }
+.risk-camera.requested { background: #3179b2; }
+.risk-controls { display: flex; align-items: center; gap: 24px; margin-top: 22px; }
+.risk-slider { flex: 1; min-width: 0; }
+.risk-slider-heading { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; font-size: 14px; font-weight: 600; }
+.risk-slider-heading output { font-variant-numeric: tabular-nums; color: var(--out); white-space: nowrap; }
+.risk-slider input { display: block; width: 100%; height: 30px; margin: 4px 0 0; accent-color: var(--out); cursor: ew-resize; }
+.risk-endpoints { display: flex; justify-content: space-between; gap: 12px; color: var(--ink-dim); font-size: 12px; }
+.risk-actions { display: flex; gap: 8px; }
+.risk-actions button { background: white; font-family: inherit; cursor: pointer; }
+.risk-cue { margin-top: 18px; padding: 10px 14px; background: var(--blue-tint); border-left: 3px solid var(--out); font-size: 14px; min-height: 44px; }
+.risk-note { color: var(--ink-dim); font-size: 13px; margin: 14px 0 10px; }
+.risk-follow { font-size: 14px; font-weight: 600; }
+.drone-demo { margin-bottom: 42px; padding-bottom: 32px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
+.drone-demo > h2 { font-size: 24px; font-weight: 700; margin: 4px 0 10px; }
+.demo-intro { font-size: 16px; margin-bottom: 22px; }
+.demo-walkthrough { display: grid; grid-template-columns: 1fr 1.5fr; gap: 28px; align-items: center; padding: 20px; background: var(--blue-tint); border: 1px solid var(--line); border-radius: 8px; margin-bottom: 30px; }
+.drone-demo h3 { font-size: 18px; font-weight: 600; margin: 0 0 10px; }
+.demo-walkthrough p { font-size: 15px; line-height: 1.6; }
+.drone-demo video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: contain; background: #101316; border-radius: 6px; }
+.demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 22px; }
+.demo-grid figure { margin: 0; min-width: 0; }
+.demo-step { display: block; color: var(--out); font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+.demo-grid p { font-size: 14px; color: var(--ink-dim); margin-top: 10px; }
+.drone-demo .demo-caption { color: var(--ink-dim); font-size: 13px; margin-top: 14px; }
+@media (max-width: 720px) {
+  .demo-walkthrough, .demo-grid { grid-template-columns: 1fr; }
+  .demo-walkthrough { gap: 16px; padding: 16px; }
+  .risk-diagrams { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .risk-diagrams .risk-plan { grid-column: 1 / -1; width: min(100%, 300px); justify-self: center; }
+  .risk-modes button { padding: 10px 8px; }
+  .risk-modes button b { font-size: 13px; }
+  .risk-modes button span { font-size: 11px; }
+  .risk-explanation { min-height: 78px; font-size: 15px; }
+  .risk-controls { flex-wrap: wrap; gap: 12px; }
+  .risk-slider { flex-basis: 100%; }
+  .risk-actions { margin-left: auto; }
+  .risk-diagrams figcaption { font-size: 12px; gap: 6px; }
+}
 @media (max-width: 600px) {
   .gallery { padding: 0 16px 28px; }
   .project-hero { padding: 24px 0; }
