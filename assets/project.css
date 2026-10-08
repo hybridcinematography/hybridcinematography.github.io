@@ -52,18 +52,16 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .reshoot-comparison figcaption, .risk-faces { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .reshoot-comparison figcaption, .risk-detail > p { color: var(--ink-dim); font-size: 14px; font-weight: 600; margin-bottom: 8px; }
 .reshoot-comparison figcaption { text-align: center; }
-.reshoot-comparison video { display: block; width: 100%; aspect-ratio: 1000 / 286; border: 1px solid var(--line); border-radius: 6px; }
+.reshoot-comparison video { display: block; width: 100%; aspect-ratio: 1000 / 572; border: 1px solid var(--line); border-radius: 6px; }
 .risk-faces img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 4px; }
 .risk-faces figure:last-child img { border-color: #b64045; }
 .risk-faces figcaption { margin-top: 5px; color: var(--ink-dim); font-size: 13px; text-align: center; }
-.capture-generation { margin-top: 24px; }
-.capture-generation h3 { margin: 0 0 8px; font-size: 20px; font-weight: 600; }
-.capture-generation p { color: var(--ink-dim); font-size: 15px; }
 .slider-motif { margin-top: 10px; }
 .slider-motif video { display: block; width: 100%; aspect-ratio: 12 / 1; background: white; }
 .slider-motif figcaption { display: flex; justify-content: space-between; gap: 16px; font-size: 15px; font-weight: 600; }
 .slider-motif figcaption > span:last-child { text-align: right; color: var(--out); }
 .slider-motif small { display: block; color: var(--ink-dim); font-size: 13px; font-weight: 400; }
+.slider-toggle { display: block; margin: 6px 0 0 auto; border: 0; color: var(--out); font-size: 12px; text-decoration: underline; text-underline-offset: 3px; }
 .contributions { margin-bottom: 34px; padding-bottom: 28px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
 .contributions h2 { font-size: 24px; font-weight: 700; margin-bottom: 18px; }
 .contributions ol { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 44px; list-style: decimal-leading-zero; margin: 0; padding-left: 28px; }

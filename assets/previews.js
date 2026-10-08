@@ -45,5 +45,6 @@
   loopGroup('.thumb video', 'preview-toggle', 'previews');
   loopGroup('.factor-videos video', 'factor-toggle', 'animations');
   loopGroup('.visualizer-previews video', 'visualizer-toggle', 'previews');
-  loopGroup('.risk-story video', 'story-toggle', 'illustrations');
+  loopGroup('.risk-story video', 'story-toggle', 'comparison');
+  loopGroup('.slider-motif video', 'slider-toggle', 'slider');
 })();

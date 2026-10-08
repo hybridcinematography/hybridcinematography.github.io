@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hybrid Cinematography: Previsualizing and Managing Hallucination Risk in Generative Video Reshooting</title><meta name="description" content="Hybrid Cinematography connects physical capture and generative video reshooting. Explore the workflow, geometric explanations, and video examples.">
 <meta name="theme-color" content="#1e6e8c">
-<link rel="stylesheet" href="assets/base.css"><link rel="stylesheet" href="assets/gallery.css"><link rel="stylesheet" href="assets/project.css?v=slider-previews2"></head><body>
+<link rel="stylesheet" href="assets/base.css"><link rel="stylesheet" href="assets/gallery.css"><link rel="stylesheet" href="assets/project.css?v=risk-layout2"></head><body>
 <a class="skip-link" href="#main">Skip to content</a>
 <main class="gallery" id="main">
 <header class="project-hero">
@@ -14,13 +14,33 @@
 <section class="project-video" id="video" aria-label="Project video">
   <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/Y9uDFzBZXWE" title="Hybrid Cinematography project video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 </section>
+<figure class="project-teaser">
+  <a href="assets/teaser.png" aria-label="View the workflow figure at full resolution"><img src="assets/teaser.png" width="2400" height="764" alt="One editable 3D shot plan connects shot planning, AR-guided capture, and review. A slider moves from the captured camera move to the target move, showing missing coverage and resolution or performance deficits before generation."></a>
+  <figcaption>One editable 3D shot plan connects planning, AR-guided capture, and review, helping filmmakers inspect and manage hallucination risk before generation.</figcaption>
+</figure>
+<section class="contributions" id="contributions" aria-labelledby="contributions-heading">
+  <h2 id="contributions-heading">Contributions</h2>
+  <ol>
+    <li><h3>A workflow for hybrid cinematography</h3><p>Navigate the continuum between captured and target camera moves, balancing physical capture against generative hallucination.</p></li>
+    <li><h3>Strategies for visualizing hallucination risk</h3><p>Reveal where and why a recorded take lacks support for a target camera move, pairing distinct deficits with targeted responses before generation.</p>
+    <figure class="slider-motif">
+      <video muted loop playsinline preload="none" poster="assets/risk-story/slider.jpg" aria-label="Rendered slider illustrating the range between captured and target camera moves" src="assets/risk-story/slider.mp4">Your browser cannot play this video. <a href="assets/risk-story/slider.mp4">Open the slider illustration</a>.</video>
+      <figcaption><span>Captured camera move<small>Physical capture</small></span><span>Target camera move<small>Generative reshoot</small></span></figcaption>
+    </figure>
+      <button class="preview-toggle slider-toggle" id="slider-toggle" type="button" hidden>Pause slider</button>
+    </li>
+    <li><h3>A mobile AR prototype and offline pipeline</h3><p>Demonstrate the workflow across on-set planning, guided capture, and review, and post-production editing of existing video.</p></li>
+    <li><h3>Findings from seven experienced filmmakers</h3><p>Show how filmmakers use previsualized hallucination risk to make camera decisions and negotiate tensions between hallucination, creative intent, and the authenticity of recorded performance.</p></li>
+  </ol>
+</section>
+<section class="abstract" aria-labelledby="abstract-heading"><h2 id="abstract-heading">Abstract</h2><p>On a film set, the camera move is committed during a take. Generative video reshooting lets filmmakers change it afterward, but may require hallucinating unrecorded content, a gap sometimes discovered only after leaving the set. We present Hybrid Cinematography, a workflow that bridges physical capture and generative reshooting to manage hallucination risk while filmmakers can still act on it. Using an editable 3D shot plan and a proxy of the take, our previsualization evaluates hallucination risk in real time. Seeing where the take lacks support, filmmakers can iteratively adjust the plan, explore moves that balance capture and generation, shoot guided pickups, or knowingly accept hallucination. We demonstrate the workflow through a mobile augmented reality application for on-set planning, capture, and review, and an offline pipeline for existing video. A study with experienced filmmakers reveals how previsualizing risk informs camera decisions and exposes tensions between creative intent and generative hallucination.</p></section>
 <section class="risk-story" id="hallucination-risk" aria-labelledby="risk-story-heading">
-  <div class="section-heading"><h2 id="risk-story-heading">How far you can move depends on what you captured</h2><button class="resource preview-toggle" id="story-toggle" type="button" hidden>Pause illustrations</button></div>
+  <div class="section-heading"><h2 id="risk-story-heading">How far you can move depends on what you captured</h2><button class="resource preview-toggle" id="story-toggle" type="button" hidden>Pause comparison</button></div>
   <p class="risk-intro">A new camera move can reveal surfaces, details, or views of a performance that the recorded take never captured. The model must invent that missing content, potentially changing the scene or the performer. These changes may only become apparent after generation, when the chance to capture more has passed.</p>
   <div class="risk-example">
     <figure class="reshoot-comparison">
       <figcaption><span>Recorded take</span><span>Generative reshoot</span></figcaption>
-      <video controls muted loop playsinline preload="none" poster="assets/risk-story/reshoot.jpg" aria-label="Recorded take and generated camera move showing hallucination" src="assets/risk-story/reshoot.mp4">Your browser cannot play this video. <a href="assets/risk-story/reshoot.mp4">Open the reshoot comparison</a>.</video>
+      <video controls muted loop playsinline preload="none" poster="assets/risk-story/reshoot.jpg?v=full-frame1" aria-label="Recorded take and generated reshoot with their camera paths, showing hallucination" src="assets/risk-story/reshoot.mp4?v=full-frame1">Your browser cannot play this video. <a href="assets/risk-story/reshoot.mp4">Open the reshoot comparison</a>.</video>
     </figure>
     <div class="risk-detail">
       <p>Hallucinated appearance</p>
@@ -30,29 +50,7 @@
       </div>
     </div>
   </div>
-  <div class="capture-generation">
-    <h3>Part real, part generative</h3>
-    <p>Hybrid Cinematography lets filmmakers explore the range between the captured and target camera moves, inspect hallucination risk before generation, and decide what to capture and what to leave to the model.</p>
-    <figure class="slider-motif">
-      <video muted loop playsinline preload="none" poster="assets/risk-story/slider.jpg" aria-label="Rendered slider illustrating the range between captured and target camera moves" src="assets/risk-story/slider.mp4">Your browser cannot play this video. <a href="assets/risk-story/slider.mp4">Open the slider illustration</a>.</video>
-      <figcaption><span>Captured camera move<small>Physical capture</small></span><span>Target camera move<small>Generative reshoot</small></span></figcaption>
-    </figure>
-  </div>
 </section>
-<figure class="project-teaser">
-  <a href="assets/teaser.png" aria-label="View the workflow figure at full resolution"><img src="assets/teaser.png" width="2400" height="764" alt="One editable 3D shot plan connects shot planning, AR-guided capture, and review. A slider moves from the captured camera move to the target move, showing missing coverage and resolution or performance deficits before generation."></a>
-  <figcaption>One editable 3D shot plan connects planning, AR-guided capture, and review, helping filmmakers inspect and manage hallucination risk before generation.</figcaption>
-</figure>
-<section class="contributions" id="contributions" aria-labelledby="contributions-heading">
-  <h2 id="contributions-heading">Contributions</h2>
-  <ol>
-    <li><h3>A workflow for hybrid cinematography</h3><p>Navigate the continuum between captured and target camera moves, balancing physical capture against generative hallucination.</p></li>
-    <li><h3>Strategies for visualizing hallucination risk</h3><p>Reveal where and why a recorded take lacks support for a target camera move, pairing distinct deficits with targeted responses before generation.</p></li>
-    <li><h3>A mobile AR prototype and offline pipeline</h3><p>Demonstrate the workflow across on-set planning, guided capture, and review, and post-production editing of existing video.</p></li>
-    <li><h3>Findings from seven experienced filmmakers</h3><p>Show how filmmakers use previsualized hallucination risk to make camera decisions and negotiate tensions between hallucination, creative intent, and the authenticity of recorded performance.</p></li>
-  </ol>
-</section>
-<section class="abstract" aria-labelledby="abstract-heading"><h2 id="abstract-heading">Abstract</h2><p>On a film set, the camera move is committed during a take. Generative video reshooting lets filmmakers change it afterward, but may require hallucinating unrecorded content, a gap sometimes discovered only after leaving the set. We present Hybrid Cinematography, a workflow that bridges physical capture and generative reshooting to manage hallucination risk while filmmakers can still act on it. Using an editable 3D shot plan and a proxy of the take, our previsualization evaluates hallucination risk in real time. Seeing where the take lacks support, filmmakers can iteratively adjust the plan, explore moves that balance capture and generation, shoot guided pickups, or knowingly accept hallucination. We demonstrate the workflow through a mobile augmented reality application for on-set planning, capture, and review, and an offline pipeline for existing video. A study with experienced filmmakers reveals how previsualizing risk informs camera decisions and exposes tensions between creative intent and generative hallucination.</p></section>
 <section class="risk-explainer" id="risk-explainer" aria-labelledby="risk-heading">
   <div class="section-heading"><h2 id="risk-heading">Previsualizing Hallucination Risk</h2></div>
   <p class="risk-intro">Keep the recorded take. Change the camera. Explore how a reshoot can ask for evidence the take does not contain.</p>
@@ -121,4 +119,4 @@
     <figure><video muted loop playsinline preload="none" poster="assets/visualizer-previews/couple-walking.jpg?v=slider2" aria-label="Recorded slider preview of the Couple walking visualizer" src="assets/visualizer-previews/couple-walking.mp4?v=slider2">Your browser cannot play this video. <a href="assets/visualizer-previews/couple-walking.mp4">Open Couple walking preview</a>.</video><figcaption>Couple walking · Recorded slider preview</figcaption></figure>
   </div>
 </section>
-</main><script src="assets/project-video.js?v=compact-hero1" defer></script><script src="assets/previews.js?v=risk-story1" defer></script></body></html>
+</main><script src="assets/project-video.js?v=compact-hero1" defer></script><script src="assets/previews.js?v=risk-layout2" defer></script></body></html>
