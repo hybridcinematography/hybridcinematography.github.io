@@ -47,9 +47,10 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
 .risk-story { margin-bottom: 34px; padding-bottom: 28px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
 .risk-story .section-heading h2 { flex: 1 1 600px; }
-.risk-example { display: grid; grid-template-columns: 2.2fr 1fr; gap: 24px; align-items: start; }
+.risk-example { display: grid; grid-template-columns: minmax(0, 1fr) 180px; gap: 24px; align-items: start; }
 .risk-example figure, .slider-motif { margin: 0; min-width: 0; }
-.reshoot-comparison figcaption, .risk-faces { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.reshoot-comparison figcaption { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.risk-faces { display: grid; grid-template-columns: 1fr; gap: 12px; max-width: 180px; }
 .reshoot-comparison figcaption, .risk-detail > p { color: var(--ink-dim); font-size: 14px; font-weight: 600; margin-bottom: 8px; }
 .reshoot-comparison figcaption { text-align: center; }
 .reshoot-comparison video { display: block; width: 100%; aspect-ratio: 1000 / 572; border: 1px solid var(--line); border-radius: 6px; }
@@ -99,7 +100,7 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .risk-explainer .section-heading { margin-bottom: 8px; }
 .risk-intro { color: var(--ink-dim); font-size: 16px; margin-bottom: 20px; }
 .factor-videos { display: grid; gap: 28px; }
-.factor-videos figure { display: grid; grid-template-columns: 1fr 1.8fr; align-items: center; gap: 28px; margin: 0; min-width: 0; }
+.factor-videos figure { display: grid; gap: 12px; margin: 0; min-width: 0; }
 .factor-videos h3 { font-size: 20px; margin: 0 0 8px; font-weight: 600; }
 .factor-videos p { color: var(--ink-dim); font-size: 15px; }
 .factor-videos video, .visualizer-previews video { display: block; width: 100%; background: #fcfdfe; border: 1px solid var(--line); border-radius: 8px; }
@@ -128,11 +129,9 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .drone-demo .demo-caption { color: var(--ink-dim); font-size: 13px; margin-top: 14px; }
 @media (max-width: 720px) {
   .risk-example { grid-template-columns: 1fr; }
-  .risk-faces { max-width: 320px; }
   .contributions ol { grid-template-columns: 1fr; }
   .demo-walkthrough, .demo-grid, .shot-plan dl { grid-template-columns: 1fr; }
   .demo-walkthrough { gap: 16px; padding: 16px; }
-  .factor-videos figure { grid-template-columns: 1fr; gap: 12px; }
   .visualizer-previews { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
