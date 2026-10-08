@@ -47,6 +47,7 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .section-heading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 16px; }
 .section-heading h2 { font-size: 24px; font-weight: 700; }
 .video-frame { width: 100%; margin-inline: auto; aspect-ratio: 16 / 9; background: #15252d; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 22px rgb(30 110 140 / 12%); }
+.video-frame, .factor-videos video, .risk-walkthrough { max-width: var(--fitted-video-width, 100%); }
 .video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
 .risk-story { margin-bottom: 34px; padding-bottom: 28px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
 .risk-story .section-heading h2 { font-size: 20px; line-height: 1.35; }
@@ -60,7 +61,7 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .reshoot-comparison figcaption { text-align: center; }
 .reshoot-comparison video { display: block; width: 100%; aspect-ratio: 1000 / 572; border: 1px solid var(--line); border-radius: 6px; }
 .risk-faces img { display: block; flex: none; width: auto; max-width: 100%; height: auto; max-height: calc(100% - 1.35em - 5px); border: 1px solid var(--line); border-radius: 4px; }
-.risk-faces figure:last-child img { border-color: #b64045; }
+.risk-faces figure:first-child img { border-color: #b64045; }
 .risk-faces figcaption { margin-top: 5px; color: var(--ink-dim); text-align: center; }
 .slider-motif { margin-top: 10px; }
 .slider-motif video { display: block; width: 100%; aspect-ratio: 12 / 1; background: white; }
@@ -105,13 +106,15 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .risk-explainer .section-heading { margin-bottom: 8px; }
 .risk-intro { color: var(--ink-dim); font-size: 16px; margin-bottom: 20px; }
 .factor-videos { display: grid; gap: 28px; }
-.factor-videos figure { display: grid; gap: 12px; margin: 0; min-width: 0; container-type: inline-size; }
+.factor-videos figure { display: grid; gap: 12px; margin: 0; min-width: 0; }
 .factor-videos h3 { font-size: 20px; margin: 0 0 8px; font-weight: 600; }
 .factor-videos p { color: var(--ink-dim); font-size: 15px; }
-.factor-videos video, .visualizer-previews video { display: block; width: 100%; background: #fcfdfe; border: 1px solid var(--line); border-radius: 8px; }
-.factor-videos video { aspect-ratio: 16 / 9; }
-/* A band below each 16:9 frame holds the native controls, so they never cover the baked-in legend. */
-.factor-videos video { height: calc(100cqi * 9 / 16 + clamp(36px, 8cqi, 52px)); object-fit: contain; object-position: top; background: #fff; }
+.factor-videos video, .visualizer-previews video, .risk-walkthrough video { display: block; width: 100%; background: #fcfdfe; border: 1px solid var(--line); border-radius: 8px; }
+.factor-videos video, .risk-walkthrough video { aspect-ratio: 16 / 9; height: auto; }
+.factor-videos video { margin-inline: auto; }
+.risk-walkthrough { width: 100%; margin: 28px auto 0; }
+.risk-walkthrough h3 { font-size: 20px; margin-bottom: 8px; }
+.risk-walkthrough p { color: var(--ink-dim); font-size: 15px; margin-bottom: 12px; }
 .visualizer-previews video { aspect-ratio: 4 / 3; }
 .risk-note { color: var(--ink-dim); font-size: 13px; margin: 14px 0 10px; }
 .risk-follow { font-size: 14px; font-weight: 600; }

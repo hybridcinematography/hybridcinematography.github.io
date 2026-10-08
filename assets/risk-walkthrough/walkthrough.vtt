@@ -1,0 +1,38 @@
+WEBVTT
+
+00:00:00.662 --> 00:00:04.429
+To evaluate hallucination
+risk before generation, we test candidate
+
+00:00:04.429 --> 00:00:07.536
+camera moves against a lightweight
+3D proxy of the take.
+
+00:00:07.536 --> 00:00:11.502
+Dragging the compromise slider lets
+filmmakers smoothly explore intermediate
+
+00:00:11.502 --> 00:00:15.567
+paths between what was shot
+and what was planned
+Under the coverage
+
+00:00:15.567 --> 00:00:19.797
+overlay, missing background surfaces
+light up in red as the camera shifts.
+
+00:00:19.797 --> 00:00:24.126
+The resolution overlay flags
+missing detail when pushing in, warning
+
+00:00:24.126 --> 00:00:27.101
+where a close-up demands data
+the sensor never captured
+
+00:00:27.464 --> 00:00:30.207
+And the performance
+overlay tracks dynamic subjects,
+
+00:00:30.207 --> 00:00:33.710
+highlighting unseen angles
+in yellow when orbiting the actor

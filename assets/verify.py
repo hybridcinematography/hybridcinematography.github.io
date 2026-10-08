@@ -1,6 +1,7 @@
 """Verify the public project page, links, and video examples without dependencies."""
 from html.parser import HTMLParser
 from pathlib import Path
+import re
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -33,6 +34,7 @@ def main():
     pages = [ROOT / 'index.html', *sorted((ROOT / 'assets/videos').glob('*.html'))]
     for path in pages:
         text = path.read_text()
+        assert not re.search(r'\bGemini\b(?! Omni Flash)', text), f'Use the full model name Gemini Omni Flash: {path}'
         page = Page()
         page.feed(text)
         for tag, attribute, link in page.links:
@@ -72,6 +74,7 @@ def main():
             story = [v for v in page.videos if v.get('src', '').startswith('assets/risk-story/')]
             assert {urlsplit(v['src']).path for v in story} == {'assets/risk-story/reshoot.mp4', 'assets/risk-story/slider.mp4'} and len(story) == 2
             assert 'story-toggle' not in page.ids, 'The comparison must loop without a pause button'
+            assert text.index('src="assets/risk-story/generated-detail.jpg"') < text.index('src="assets/risk-story/captured-detail.jpg"'), 'Show the generated face above the reference'
             for video in story:
                 assert {'muted', 'loop', 'playsinline', 'poster', 'aria-label'} <= video.keys()
                 assert 'controls' not in video, 'Playback overlays must not obscure the comparison or slider'
@@ -87,10 +90,20 @@ def main():
                 f'assets/factor-videos/{name}.mp4' for name in ('coverage', 'resolution', 'performance')
             } and len(factors) == 3, 'Expected three rendered factor animations'
             for video in factors:
-                assert {'controls', 'muted', 'loop', 'playsinline', 'poster', 'aria-label'} <= video.keys()
+                assert {'muted', 'loop', 'playsinline', 'poster', 'aria-label'} <= video.keys()
+                assert 'controls' not in video, 'Player bars must not obscure the three strategy animations'
                 assert video.get('preload') == 'none' and 'autoplay' not in video
                 assert (ROOT / video['src']).read_bytes()[4:8] == b'ftyp'
-            print('PASS: 3 rendered factor videos with silent loops, posters, and playback controls; interactive animation code removed.')
+            print('PASS: 3 rendered factor videos with silent loops and posters, without player bars; interactive animation code removed.')
+            walkthrough = [v for v in page.videos if v.get('src') == 'assets/risk-walkthrough/walkthrough.mp4']
+            assert len(walkthrough) == 1, 'Expected one slider walkthrough below the three strategies'
+            assert text.index('src="assets/factor-videos/performance.mp4"') < text.index('id="slider-walkthrough"') < text.index('id="drone-demo"')
+            assert {'controls', 'playsinline', 'poster', 'aria-label'} <= walkthrough[0].keys()
+            assert not {'autoplay', 'muted', 'loop'} & walkthrough[0].keys() and walkthrough[0].get('preload') == 'none', 'Narrated walkthrough must start only on request'
+            assert 'src="assets/risk-walkthrough/walkthrough.vtt"' in text, 'Include walkthrough captions'
+            assert (ROOT / walkthrough[0]['src']).read_bytes()[4:8] == b'ftyp'
+            assert {p.name for p in (ROOT / 'assets/risk-walkthrough').iterdir()} == {'walkthrough.mp4', 'walkthrough.jpg', 'walkthrough.vtt'}, 'Only rendered walkthrough media and captions may be public'
+            print('PASS: generated face precedes reference; captioned slider walkthrough follows the three strategies.')
             visualizer_previews = [v for v in page.videos if v.get('src', '').startswith('assets/visualizer-previews/')]
             visualizer_names = ('studio-performer', 'office-performer', 'hall-cartwheel', 'lounge-drink',
                                 'couple-with-newspaper', 'conference-punch', 'couple-walking')
