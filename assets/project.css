@@ -1,11 +1,13 @@
-/* Micro-Edits layout family, using the capture teal and target blue from teaser-v54.svg.
+/* Micro-Edits layout family. The accent is the teaser's capture-trail teal (#278b85), darkened
+   for text contrast. Blue stays reserved for the target move, as in teaser-v54.svg.
    This stylesheet is only loaded by the project page, not the scene viewers. */
 :root {
   --ink: #303740;
   --ink-dim: #5a5f69;
   --line: #d8e3eb;
-  --out: #1e6e8c;
-  --accent-hover: #15546c;
+  --out: #0f766e;
+  --accent-hover: #115e59;
+  --out-tint: #effaf8;
   --blue: #3c96eb;
   --blue-tint: #f4f9fe;
   --font-b: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -30,7 +32,7 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .affiliations { margin-top: 8px; color: var(--ink-dim); font-size: 14px; }
 .resource-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
 .resource { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 8px 16px; border: 1px solid var(--out); border-radius: 4px; color: var(--out); font-size: 14px; font-weight: 600; text-decoration: none; transition: background .15s, color .15s; }
-.resource:hover { color: var(--out); background: var(--blue-tint); text-decoration: none; }
+.resource:hover { color: var(--out); background: var(--out-tint); text-decoration: none; }
 .resource.primary { background: var(--out); border-color: var(--out); color: white; }
 .resource.primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
 .project-teaser { margin: 0; padding: 0 0 26px; }
@@ -62,7 +64,7 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .slider-motif { margin-top: 10px; }
 .slider-motif video { display: block; width: 100%; aspect-ratio: 12 / 1; background: white; }
 .slider-motif figcaption { display: flex; justify-content: space-between; gap: 16px; font-size: 15px; font-weight: 600; }
-.slider-motif figcaption > span:last-child { text-align: right; color: var(--out); }
+.slider-motif figcaption > span:last-child { text-align: right; color: var(--blue); }
 .slider-motif small { display: block; color: var(--ink-dim); font-size: 13px; font-weight: 400; }
 .contributions { margin-bottom: 34px; padding-bottom: 28px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
 .contributions h2 { font-size: 24px; font-weight: 700; margin-bottom: 18px; }
@@ -102,11 +104,13 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .risk-explainer .section-heading { margin-bottom: 8px; }
 .risk-intro { color: var(--ink-dim); font-size: 16px; margin-bottom: 20px; }
 .factor-videos { display: grid; gap: 28px; }
-.factor-videos figure { display: grid; gap: 12px; margin: 0; min-width: 0; }
+.factor-videos figure { display: grid; gap: 12px; margin: 0; min-width: 0; container-type: inline-size; }
 .factor-videos h3 { font-size: 20px; margin: 0 0 8px; font-weight: 600; }
 .factor-videos p { color: var(--ink-dim); font-size: 15px; }
 .factor-videos video, .visualizer-previews video { display: block; width: 100%; background: #fcfdfe; border: 1px solid var(--line); border-radius: 8px; }
 .factor-videos video { aspect-ratio: 16 / 9; }
+/* A band below each 16:9 frame holds the native controls, so they never cover the baked-in legend. */
+.factor-videos video { height: calc(100cqi * 9 / 16 + clamp(36px, 8cqi, 52px)); object-fit: contain; object-position: top; background: #fff; }
 .visualizer-previews video { aspect-ratio: 4 / 3; }
 .risk-note { color: var(--ink-dim); font-size: 13px; margin: 14px 0 10px; }
 .risk-follow { font-size: 14px; font-weight: 600; }

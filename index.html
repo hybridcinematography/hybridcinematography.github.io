@@ -1,8 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hybrid Cinematography: Previsualizing and Managing Hallucination Risk in Generative Video Reshooting</title><meta name="description" content="Hybrid Cinematography connects physical capture and generative video reshooting. Explore the workflow, geometric explanations, and video examples.">
-<meta name="theme-color" content="#1e6e8c">
-<link rel="stylesheet" href="assets/base.css"><link rel="stylesheet" href="assets/gallery.css"><link rel="stylesheet" href="assets/project.css?v=aligned-risk-rows1"></head><body>
+<meta name="theme-color" content="#0f766e">
+<meta property="og:type" content="website"><meta property="og:url" content="https://hybridcinematography.github.io/">
+<meta property="og:title" content="Hybrid Cinematography"><meta property="og:description" content="Previsualizing and managing hallucination risk in generative video reshooting.">
+<meta property="og:image" content="https://hybridcinematography.github.io/assets/social-card.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="assets/base.css?v=teal1"><link rel="stylesheet" href="assets/gallery.css"><link rel="stylesheet" href="assets/project.css?v=teal1"></head><body>
 <a class="skip-link" href="#main">Skip to content</a>
 <main class="gallery" id="main">
 <header class="project-hero">
@@ -56,7 +60,7 @@
   </div>
 </section>
 <section class="risk-explainer" id="risk-explainer" aria-labelledby="risk-heading">
-  <div class="section-heading"><h2 id="risk-heading">Previsualizing Hallucination Risk</h2></div>
+  <div class="section-heading"><h2 id="risk-heading">Previsualizing hallucination risk</h2></div>
   <p class="risk-intro">Keep the recorded take. Change the camera. Explore how a reshoot can ask for evidence the take does not contain.</p>
   <div class="preview-controls"><button class="resource preview-toggle" id="factor-toggle" type="button" hidden>Pause animations</button></div>
   <div class="factor-videos">
@@ -73,7 +77,7 @@
       <video controls muted loop playsinline preload="none" poster="assets/factor-videos/performance.jpg" aria-label="Performance animation" src="assets/factor-videos/performance.mp4">Your browser cannot play this video. <a href="assets/factor-videos/performance.mp4">Open performance animation</a>.</video>
     </figure>
   </div>
-  <p class="risk-note">Illustrative geometry from the project video, showing one factor at a time.</p>
+  <p class="risk-note">Illustrative geometry from the project video, showing one deficit at a time.</p>
   <a class="risk-follow" href="assets/videos/walking.html">See how revising the move changes the Walking reshoot <span aria-hidden="true">↗</span></a>
 </section>
 <section class="drone-demo" id="drone-demo" aria-labelledby="drone-heading">
@@ -89,18 +93,18 @@
       <div><dt>Space · Path and framing</dt><dd>A (start) → B (dolly zoom) → C (before the hole) → D (fly-through). Keyframes define position, viewing direction, and framing.</dd></div>
       <div><dt>Time · Pace along the path</dt><dd>Set duration, speed, and easing independently of the path. The performance keeps its recorded timing.</dd></div>
     </dl>
-    <p>Rendering the proxy along this plan <strong>encodes space and time in a point-cloud conditioning video</strong>, without a lengthy motion prompt. Vista4D, Gen3C, or Gemini use it alongside any required source footage and masks.</p>
+    <p>Rendering the proxy along this plan <strong>encodes space and time in a point-cloud conditioning video</strong>, without a lengthy motion prompt. Recent reshooting models such as <a href="https://eyeline-labs.github.io/Vista4D/">Vista4D</a>, <a href="https://research.nvidia.com/labs/toronto-ai/GEN3C/">GEN3C</a>, and <a href="https://deepmind.google/models/gemini-omni/">Gemini Omni Flash</a> take it alongside any required source footage and masks.</p>
   </div>
   <div class="demo-grid">
     <figure><figcaption><span class="demo-step">01 · Input</span><h3>Recorded handheld video</h3></figcaption><video controls playsinline preload="none" poster="assets/drone-demo/capture.jpg" aria-label="Recorded handheld input for the drone tour" src="assets/drone-demo/capture.mp4">Your browser cannot play this video. <a href="assets/drone-demo/capture.mp4">Open recorded input</a>.</video><p>The actual camera passes over the board. Shown at the recorded timing.</p></figure>
     <figure><figcaption><span class="demo-step">02 · Condition</span><h3>The plan in space and time</h3></figcaption><video controls playsinline preload="none" poster="assets/drone-demo/condition.jpg" aria-label="Point-cloud condition with the planned camera path and authored timing" src="assets/drone-demo/condition.mp4">Your browser cannot play this video. <a href="assets/drone-demo/condition.mp4">Open point-cloud condition</a>.</video><p>Shown here: an offline Pi3X reconstruction rendered along the planned fly-through, with the camera’s path and timing already applied.</p></figure>
-    <figure><figcaption><span class="demo-step">03 · Generated output</span><h3>Gen3C</h3></figcaption><video controls playsinline preload="none" poster="assets/drone-demo/gen3c.jpg" aria-label="Gen3C generated drone tour" src="assets/drone-demo/gen3c.mp4">Your browser cannot play this video. <a href="assets/drone-demo/gen3c.mp4">Open Gen3C output</a>.</video><p>Reshoot on the authored camera, from the on-set demo. <a href="https://github.com/nv-tlabs/GEN3C">Gen3C code ↗</a></p></figure>
-    <figure><figcaption><span class="demo-step">03 · Generated output</span><h3>Gemini Omni Flash</h3></figcaption><video controls playsinline preload="none" poster="assets/drone-demo/gemini.jpg" aria-label="Gemini Omni Flash generated drone tour" src="assets/drone-demo/gemini.mp4">Your browser cannot play this video. <a href="assets/drone-demo/gemini.mp4">Open Gemini Omni Flash output</a>.</video><p>Reshoot from the point-cloud condition, as shown in the presentation.</p></figure>
+    <figure><figcaption><span class="demo-step">03 · Generated output</span><h3>GEN3C</h3></figcaption><video controls playsinline preload="none" poster="assets/drone-demo/gen3c.jpg" aria-label="GEN3C generated drone tour" src="assets/drone-demo/gen3c.mp4">Your browser cannot play this video. <a href="assets/drone-demo/gen3c.mp4">Open GEN3C output</a>.</video><p>Reshoot on the authored camera, from the on-set demo. <a href="https://github.com/nv-tlabs/GEN3C">GEN3C code ↗</a></p></figure>
+    <figure><figcaption><span class="demo-step">03 · Generated output</span><h3>Gemini Omni Flash</h3></figcaption><video controls playsinline preload="none" poster="assets/drone-demo/gemini.jpg" aria-label="Gemini Omni Flash generated drone tour" src="assets/drone-demo/gemini.mp4">Your browser cannot play this video. <a href="assets/drone-demo/gemini.mp4">Open Gemini Omni Flash output</a>.</video><p>Conditioned on the shot plan (path and timing) from the app.</p></figure>
   </div>
   <p class="demo-caption">Each clip retains its own timing. The two outputs are separate model runs; play them individually or expand a video to inspect the result.</p>
 </section>
 <!-- video examples start -->
-<section class="video-section" id="video-examples" aria-labelledby="video-heading"><div class="video-heading"><h2 id="video-heading">Video examples</h2><p>Compare the original captures and reshoots, including the drone tour with and without point-cloud guidance and revisions to camera motion and timing.</p></div><div class="preview-controls"><button class="resource preview-toggle" id="preview-toggle" type="button" hidden>Pause previews</button></div><div class="scene-grid"><a class="scene" href="assets/videos/drone_tour.html"><div class="comparison-labels" aria-hidden="true"><span>Input</span><span>Output · Gemini</span></div><div class="thumb"><img src="assets/videos/drone_tour.jpg" alt="Drone-like tour: recorded input on the left, Gemini output guided by the point-cloud video on the right" loading="lazy"><video data-src="assets/previews/video-drone_tour.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div><div class="scene-info"><div><h3>Drone-like tour</h3><p>With and without point-cloud guidance · 5 videos</p></div><span class="open">Watch videos ↗</span></div></a>
+<section class="video-section" id="video-examples" aria-labelledby="video-heading"><div class="video-heading"><h2 id="video-heading">Video examples</h2><p>Compare the original captures and reshoots, including the drone tour with and without point-cloud guidance and revisions to camera motion and timing. Reshoots come from recent generative reshooting models: <a href="https://eyeline-labs.github.io/Vista4D/">Vista4D</a>, <a href="https://research.nvidia.com/labs/toronto-ai/GEN3C/">GEN3C</a>, and <a href="https://deepmind.google/models/gemini-omni/">Gemini Omni Flash</a>. The workflow is model-agnostic: the shot plan becomes a point-cloud conditioning video that any of them can take as input.</p></div><div class="preview-controls"><button class="resource preview-toggle" id="preview-toggle" type="button" hidden>Pause previews</button></div><div class="scene-grid"><a class="scene" href="assets/videos/drone_tour.html"><div class="comparison-labels" aria-hidden="true"><span>Input</span><span>Output · Gemini</span></div><div class="thumb"><img src="assets/videos/drone_tour.jpg" alt="Drone-like tour: recorded input on the left, Gemini output guided by the point-cloud video on the right" loading="lazy"><video data-src="assets/previews/video-drone_tour.mp4" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div><div class="scene-info"><div><h3>Drone-like tour</h3><p>With and without point-cloud guidance · 5 videos</p></div><span class="open">Watch videos ↗</span></div></a>
 <a class="scene" href="assets/videos/dolly_zoom.html"><div class="comparison-labels" aria-hidden="true"><span>Input</span><span>Output</span></div><div class="thumb"><img src="assets/videos/dolly_zoom.jpg?v=input-output1" alt="Dolly zoom: recorded input on the left, generated dolly zoom on the right" loading="lazy"><video data-src="assets/previews/video-dolly_zoom.mp4?v=input-output1" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div><div class="scene-info"><div><h3>Dolly zoom</h3><p>Planned reshoot · 3 videos</p></div><span class="open">Watch videos ↗</span></div></a>
 <a class="scene" href="assets/videos/drone_shot1.html"><div class="comparison-labels" aria-hidden="true"><span>Input</span><span>Output</span></div><div class="thumb"><img src="assets/videos/drone_shot1.jpg?v=input-output1" alt="Drone shot: recorded input on the left, generated retimed move on the right" loading="lazy"><video data-src="assets/previews/video-drone_shot1.mp4?v=input-output1" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div><div class="scene-info"><div><h3>Drone shot 1</h3><p>Retimed reshoot · 2 videos</p></div><span class="open">Watch videos ↗</span></div></a>
 <a class="scene" href="assets/videos/mannequin.html"><div class="comparison-labels" aria-hidden="true"><span>Input</span><span>Output</span></div><div class="thumb"><img src="assets/videos/mannequin.jpg?v=input-output1" alt="Mannequin: recorded input on the left, generated camera move on the right" loading="lazy"><video data-src="assets/previews/video-mannequin.mp4?v=input-output1" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></div><div class="scene-info"><div><h3>Mannequin</h3><p>Planned reshoot · 3 videos</p></div><span class="open">Watch videos ↗</span></div></a>
@@ -123,4 +127,21 @@
     <figure><video muted loop playsinline preload="none" poster="assets/visualizer-previews/couple-walking.jpg?v=slider1500" aria-label="Recorded slider preview of the Couple walking visualizer" src="assets/visualizer-previews/couple-walking.mp4?v=slider1500">Your browser cannot play this video. <a href="assets/visualizer-previews/couple-walking.mp4">Open Couple walking preview</a>.</video><figcaption>Couple walking · Recorded slider preview</figcaption></figure>
   </div>
 </section>
-</main><script src="assets/project-video.js?v=compact-hero1" defer></script><script src="assets/previews.js?v=auto-comparison1" defer></script></body></html>
+</main><script src="assets/project-video.js?v=compact-hero1" defer></script><script src="assets/previews.js?v=auto-comparison1" defer></script><!-- Default Statcounter code for HybridCinematography
+https://hybridcinematography.github.io/ -->
+<script type="text/javascript">
+var sc_project=13358792;
+var sc_invisible=1;
+var sc_security="0e1bf05b";
+</script>
+<script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js"
+async></script>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img
+class="statcounter"
+src="https://c.statcounter.com/13358792/0/0e1bf05b/1/"
+alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+<!-- End of Statcounter Code -->
+</body></html>

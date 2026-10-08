@@ -41,6 +41,9 @@ def main():
                 continue  # Public author homepages; assets must still be local.
             if tag == 'iframe' and attribute == 'src' and link == 'https://www.youtube-nocookie.com/embed/Y9uDFzBZXWE':
                 continue  # The project video supplied by the authors.
+            if (tag, attribute, link) in {('script', 'src', 'https://www.statcounter.com/counter/counter.js'),
+                                          ('img', 'src', 'https://c.statcounter.com/13358792/0/0e1bf05b/1/')}:
+                continue  # The authors' Statcounter page-view counter.
             assert not url.scheme and not url.netloc, f'External dependency: {link}'
             target = (path.parent / unquote(url.path)).resolve() if url.path else path
             assert target.is_relative_to(ROOT) and target.is_file(), f'Missing asset: {link}'
