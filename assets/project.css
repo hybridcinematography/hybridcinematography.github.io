@@ -33,6 +33,7 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .resource-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
 .resource { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 8px 16px; border: 1px solid var(--out); border-radius: 4px; color: var(--out); font-size: 14px; font-weight: 600; text-decoration: none; transition: background .15s, color .15s; }
 .resource:hover { color: var(--out); background: var(--out-tint); text-decoration: none; }
+.resource:disabled { color: var(--ink-dim); border-color: var(--line); background: transparent; opacity: .65; cursor: default; }
 .resource.primary { background: var(--out); border-color: var(--out); color: white; }
 .resource.primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
 .project-teaser { margin: 0; padding: 0 0 26px; }
