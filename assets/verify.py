@@ -95,13 +95,14 @@ def main():
                 assert video.get('preload') == 'none' and 'autoplay' not in video
                 assert (ROOT / video['src']).read_bytes()[4:8] == b'ftyp'
             print('PASS: 3 rendered factor videos with silent loops and posters, without player bars; interactive animation code removed.')
-            walkthrough = [v for v in page.videos if v.get('src') == 'assets/risk-walkthrough/walkthrough.mp4']
+            walkthrough = [v for v in page.videos if urlsplit(v.get('src', '')).path == 'assets/risk-walkthrough/walkthrough.mp4']
             assert len(walkthrough) == 1, 'Expected one slider walkthrough below the three strategies'
             assert text.index('src="assets/factor-videos/performance.mp4"') < text.index('id="slider-walkthrough"') < text.index('id="drone-demo"')
             assert {'controls', 'playsinline', 'poster', 'aria-label'} <= walkthrough[0].keys()
             assert not {'autoplay', 'muted', 'loop'} & walkthrough[0].keys() and walkthrough[0].get('preload') == 'none', 'Narrated walkthrough must start only on request'
             assert 'src="assets/risk-walkthrough/walkthrough.vtt"' in text, 'Include walkthrough captions'
-            assert (ROOT / walkthrough[0]['src']).read_bytes()[4:8] == b'ftyp'
+            clip = ROOT / urlsplit(walkthrough[0]['src']).path
+            assert clip.read_bytes()[4:8] == b'ftyp' and clip.stat().st_size < 4_000_000, 'Keep the slider walkthrough below 4 MB'
             assert {p.name for p in (ROOT / 'assets/risk-walkthrough').iterdir()} == {'walkthrough.mp4', 'walkthrough.jpg', 'walkthrough.vtt'}, 'Only rendered walkthrough media and captions may be public'
             print('PASS: generated face precedes reference; captioned slider walkthrough follows the three strategies.')
             visualizer_previews = [v for v in page.videos if v.get('src', '').startswith('assets/visualizer-previews/')]

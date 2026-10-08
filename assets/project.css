@@ -19,6 +19,7 @@ a { text-decoration: none; }
 a:hover { color: var(--accent-hover); text-decoration: underline; }
 a:focus-visible { outline-color: var(--blue); }
 .gallery { max-width: 1060px; padding: 0 20px 30px; }
+.gallery > section { width: 100%; max-width: var(--fitted-video-width, 100%); margin-inline: auto; container-type: inline-size; }
 .skip-link { position: absolute; top: 8px; left: 16px; transform: translateY(-150%); background: white; padding: 10px 16px; z-index: 10; }
 .skip-link:focus { transform: translateY(0); }
 .project-hero { max-width: 940px; margin: auto; padding: 20px 0 16px; text-align: center; }
@@ -47,7 +48,6 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .section-heading { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 16px; }
 .section-heading h2 { font-size: 24px; font-weight: 700; }
 .video-frame { width: 100%; margin-inline: auto; aspect-ratio: 16 / 9; background: #15252d; border-radius: 8px; overflow: hidden; box-shadow: 0 6px 22px rgb(30 110 140 / 12%); }
-.video-frame, .factor-videos video, .risk-walkthrough { max-width: var(--fitted-video-width, 100%); }
 .video-frame iframe { display: block; width: 100%; height: 100%; border: 0; }
 .risk-story { margin-bottom: 34px; padding-bottom: 28px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
 .risk-story .section-heading h2 { font-size: 20px; line-height: 1.35; }
@@ -121,7 +121,7 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .drone-demo { margin-bottom: 42px; padding-bottom: 32px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
 .drone-demo > h2 { font-size: 24px; font-weight: 700; margin: 4px 0 10px; }
 .demo-intro { font-size: 16px; margin-bottom: 22px; }
-.demo-walkthrough { display: grid; grid-template-columns: 1fr 1.5fr; gap: 28px; align-items: center; padding: 20px; background: var(--blue-tint); border: 1px solid var(--line); border-radius: 8px; margin-bottom: 30px; }
+.demo-walkthrough { display: grid; gap: 12px; margin-bottom: 30px; }
 .drone-demo h3 { font-size: 18px; font-weight: 600; margin: 0 0 10px; }
 .demo-walkthrough p { font-size: 15px; line-height: 1.6; }
 .demo-walkthrough p + p { margin-top: 12px; }
@@ -137,16 +137,17 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .demo-step { display: block; color: var(--out); font-size: 13px; font-weight: 600; margin-bottom: 4px; }
 .demo-grid p { font-size: 14px; color: var(--ink-dim); margin-top: 10px; }
 .drone-demo .demo-caption { color: var(--ink-dim); font-size: 13px; margin-top: 14px; }
-@media (max-width: 720px) {
-  .reshoot-comparison figcaption, .risk-detail > p, .risk-faces { font-size: clamp(9px, 2.5vw, 12px); line-height: 1.35; }
+@container (max-width: 720px) {
+  .reshoot-comparison figcaption, .risk-detail > p, .risk-faces { font-size: clamp(9px, 2.5cqw, 12px); line-height: 1.35; }
   .reshoot-comparison figcaption { gap: 6px; align-items: end; }
   .contributions ol { grid-template-columns: 1fr; }
-  .demo-walkthrough, .demo-grid, .shot-plan dl { grid-template-columns: 1fr; }
-  .demo-walkthrough { gap: 16px; padding: 16px; }
+  .demo-grid, .shot-plan dl { grid-template-columns: 1fr; }
   .visualizer-previews { grid-template-columns: 1fr; }
 }
-@media (max-width: 600px) {
+@container (max-width: 600px) {
   .scene-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
   .gallery { padding: 0 16px 28px; }
   .project-hero { padding: 24px 0; }
   .project-hero h1 { font-size: 24px; }
