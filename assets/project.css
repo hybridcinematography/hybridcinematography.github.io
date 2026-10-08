@@ -105,7 +105,9 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .factor-videos figure { display: grid; grid-template-columns: 1fr 1.8fr; align-items: center; gap: 28px; margin: 0; min-width: 0; }
 .factor-videos h3 { font-size: 20px; margin: 0 0 8px; font-weight: 600; }
 .factor-videos p { color: var(--ink-dim); font-size: 15px; }
-.factor-videos video, .visualizer-previews video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #fcfdfe; border: 1px solid var(--line); border-radius: 8px; }
+.factor-videos video, .visualizer-previews video { display: block; width: 100%; background: #fcfdfe; border: 1px solid var(--line); border-radius: 8px; }
+.factor-videos video { aspect-ratio: 16 / 9; }
+.visualizer-previews video { aspect-ratio: 4 / 3; }
 .risk-note { color: var(--ink-dim); font-size: 13px; margin: 14px 0 10px; }
 .risk-follow { font-size: 14px; font-weight: 600; }
 .drone-demo { margin-bottom: 42px; padding-bottom: 32px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }

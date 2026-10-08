@@ -85,20 +85,22 @@ def main():
                 assert (ROOT / video['src']).read_bytes()[4:8] == b'ftyp'
             print('PASS: 3 rendered factor videos with silent loops, posters, and playback controls; interactive animation code removed.')
             visualizer_previews = [v for v in page.videos if v.get('src', '').startswith('assets/visualizer-previews/')]
-            assert {v.get('src') for v in visualizer_previews} == {
-                f'assets/visualizer-previews/{name}.mp4' for name in ('office-performer', 'hall-cartwheel')
-            } and len(visualizer_previews) == 2, 'Expected two recorded visualizer previews'
+            visualizer_names = ('studio-performer', 'office-performer', 'hall-cartwheel', 'lounge-drink',
+                                'couple-with-newspaper', 'conference-punch', 'couple-walking')
+            assert {urlsplit(v['src']).path for v in visualizer_previews} == {
+                f'assets/visualizer-previews/{name}.mp4' for name in visualizer_names
+            } and len(visualizer_previews) == 7, 'Expected all seven recorded slider previews'
             for video in visualizer_previews:
                 assert {'muted', 'loop', 'playsinline', 'poster', 'aria-label'} <= video.keys()
                 assert 'controls' not in video, 'Visualizer teasers should show recorded views without controls'
                 assert video.get('preload') == 'none' and 'autoplay' not in video
-                clip = ROOT / video['src']
+                clip = ROOT / urlsplit(video['src']).path
                 assert clip.read_bytes()[4:8] == b'ftyp'
                 assert clip.stat().st_size < 1_500_000, 'Visualizer preview exceeds 1.5 MB budget'
             assert {p.name for p in (ROOT / 'assets/visualizer-previews').iterdir()} == {
-                f'{name}.{ext}' for name in ('office-performer', 'hall-cartwheel') for ext in ('mp4', 'jpg')
+                f'{name}.{ext}' for name in visualizer_names for ext in ('mp4', 'jpg')
             }, 'Visualizer preview folder must contain only the videos and posters'
-            print('PASS: 2 lightweight, recorded visualizer previews; only MP4 videos and JPEG posters.')
+            print('PASS: all 7 recorded slider previews are lightweight videos with JPEG posters; no viewer source.')
             demo = [v for v in page.videos if v.get('src', '').startswith('assets/drone-demo/')]
             assert {v.get('src') for v in demo} == {
                 f'assets/drone-demo/{name}.mp4'
