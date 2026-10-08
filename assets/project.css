@@ -98,7 +98,6 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .scene-info { flex-wrap: wrap; gap: 8px; padding: 10px 0 0; }
 .scene-info h3 { margin: 0 0 3px; font-size: 16px; line-height: 1.4; font-weight: 600; }
 .scene-info p { font-size: 13px; }
-.open { font-size: 14px; }
 .video-heading p { font-size: 16px; }
 .video-heading h2 { font-size: 24px; font-weight: 700; }
 .video-section { margin-top: 0; padding-top: 0; border-top: 0; }
