@@ -68,9 +68,10 @@ def main():
             assert 'slider-toggle' not in page.ids and '<button' not in strategies, 'The slider contribution must not have a playback button'
             story = [v for v in page.videos if v.get('src', '').startswith('assets/risk-story/')]
             assert {urlsplit(v['src']).path for v in story} == {'assets/risk-story/reshoot.mp4', 'assets/risk-story/slider.mp4'} and len(story) == 2
-            assert 'story-toggle' in page.ids
+            assert 'story-toggle' not in page.ids, 'The comparison must loop without a pause button'
             for video in story:
                 assert {'muted', 'loop', 'playsinline', 'poster', 'aria-label'} <= video.keys()
+                assert 'controls' not in video, 'Playback overlays must not obscure the comparison or slider'
                 assert video.get('preload') == 'none' and 'autoplay' not in video
                 clip = ROOT / urlsplit(video['src']).path
                 assert clip.read_bytes()[4:8] == b'ftyp' and clip.stat().st_size < 1_500_000

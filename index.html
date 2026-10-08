@@ -34,7 +34,7 @@
 </section>
 <section class="abstract" aria-labelledby="abstract-heading"><h2 id="abstract-heading">Abstract</h2><p>On a film set, the camera move is committed during a take. Generative video reshooting lets filmmakers change it afterward, but may require hallucinating unrecorded content, a gap sometimes discovered only after leaving the set. We present Hybrid Cinematography, a workflow that bridges physical capture and generative reshooting to manage hallucination risk while filmmakers can still act on it. Using an editable 3D shot plan and a proxy of the take, our previsualization evaluates hallucination risk in real time. Seeing where the take lacks support, filmmakers can iteratively adjust the plan, explore moves that balance capture and generation, shoot guided pickups, or knowingly accept hallucination. We demonstrate the workflow through a mobile augmented reality application for on-set planning, capture, and review, and an offline pipeline for existing video. A study with experienced filmmakers reveals how previsualizing risk informs camera decisions and exposes tensions between creative intent and generative hallucination.</p></section>
 <section class="risk-story" id="hallucination-risk" aria-labelledby="risk-story-heading">
-  <div class="section-heading"><h2 id="risk-story-heading">How far you can move depends on what you captured</h2><button class="resource preview-toggle" id="story-toggle" type="button" hidden>Pause comparison</button></div>
+  <div class="section-heading"><h2 id="risk-story-heading">How far you can move depends on what you captured</h2></div>
   <ul class="risk-intro">
     <li>Near the captured camera path, the reshoot stays <strong>more faithful</strong> to the recorded take.</li>
     <li>Push beyond what was captured, and the model must <strong>hallucinate</strong>.</li>
@@ -43,7 +43,7 @@
   <div class="risk-example">
     <figure class="reshoot-comparison">
       <figcaption><span>Recorded take</span><span>Generative reshoot</span></figcaption>
-      <video controls muted loop playsinline preload="none" poster="assets/risk-story/reshoot.jpg?v=full-frame1" aria-label="Recorded take and generated reshoot with their camera paths, showing hallucination" src="assets/risk-story/reshoot.mp4?v=full-frame1">Your browser cannot play this video. <a href="assets/risk-story/reshoot.mp4">Open the reshoot comparison</a>.</video>
+      <video muted loop playsinline preload="none" poster="assets/risk-story/reshoot.jpg?v=full-frame1" aria-label="Recorded take and generated reshoot with their camera paths, showing hallucination" src="assets/risk-story/reshoot.mp4?v=full-frame1">Your browser cannot play this video. <a href="assets/risk-story/reshoot.mp4">Open the reshoot comparison</a>.</video>
     </figure>
     <div class="risk-detail">
       <p>Hallucinated appearance</p>
@@ -79,7 +79,7 @@
   <p class="eyebrow">An on-set example</p><h2 id="drone-heading">Planning a shot the phone cannot capture</h2>
   <p class="demo-intro">Some cinematic shots are difficult to execute by hand. Here, we plan a dolly zoom followed by a push through a hole in a Connect Four board. The phone cannot fit through the opening, so we plan this move as a generative reshoot.</p>
   <div class="demo-walkthrough">
-    <div><h3>Plan, capture, and review</h3><p>After planning the shot, we capture an offset pass over the board. We then scrub between the captured and target camera moves to inspect hallucination risk and record guided pickups where coverage is missing.</p><p><strong>Live capture · LiDAR.</strong> The app builds its 3D proxy in real time from LiDAR depth and tracked camera poses, so the take can be reviewed on set.</p><p class="demo-caption">Narrated walkthrough · 1:06</p></div>
+    <div><h3>Plan, capture, and review</h3><p>We plan the shot with AR keyframes in 3D, adjusting timing and speed along the path. After capture, we scrub toward the target move to inspect risk and guide pickups.</p><p><strong>Live capture · LiDAR.</strong> The app reconstructs a 3D proxy in real time for on-set review.</p><p class="demo-caption">Narrated walkthrough · 1:06</p></div>
     <video controls playsinline preload="none" poster="assets/drone-demo/walkthrough.jpg" aria-label="Drone tour planning, capture, and review walkthrough" src="assets/drone-demo/walkthrough.mp4"><track kind="captions" src="assets/drone-demo/walkthrough.vtt" srclang="en" label="English">Your browser cannot play this video. <a href="assets/drone-demo/walkthrough.mp4">Open walkthrough</a>.</video>
   </div>
   <div class="shot-plan">
@@ -122,4 +122,4 @@
     <figure><video muted loop playsinline preload="none" poster="assets/visualizer-previews/couple-walking.jpg?v=slider2" aria-label="Recorded slider preview of the Couple walking visualizer" src="assets/visualizer-previews/couple-walking.mp4?v=slider2">Your browser cannot play this video. <a href="assets/visualizer-previews/couple-walking.mp4">Open Couple walking preview</a>.</video><figcaption>Couple walking · Recorded slider preview</figcaption></figure>
   </div>
 </section>
-</main><script src="assets/project-video.js?v=compact-hero1" defer></script><script src="assets/previews.js?v=auto-slider1" defer></script></body></html>
+</main><script src="assets/project-video.js?v=compact-hero1" defer></script><script src="assets/previews.js?v=auto-comparison1" defer></script></body></html>
