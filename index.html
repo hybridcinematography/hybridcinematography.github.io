@@ -35,7 +35,11 @@
 <section class="abstract" aria-labelledby="abstract-heading"><h2 id="abstract-heading">Abstract</h2><p>On a film set, the camera move is committed during a take. Generative video reshooting lets filmmakers change it afterward, but may require hallucinating unrecorded content, a gap sometimes discovered only after leaving the set. We present Hybrid Cinematography, a workflow that bridges physical capture and generative reshooting to manage hallucination risk while filmmakers can still act on it. Using an editable 3D shot plan and a proxy of the take, our previsualization evaluates hallucination risk in real time. Seeing where the take lacks support, filmmakers can iteratively adjust the plan, explore moves that balance capture and generation, shoot guided pickups, or knowingly accept hallucination. We demonstrate the workflow through a mobile augmented reality application for on-set planning, capture, and review, and an offline pipeline for existing video. A study with experienced filmmakers reveals how previsualizing risk informs camera decisions and exposes tensions between creative intent and generative hallucination.</p></section>
 <section class="risk-story" id="hallucination-risk" aria-labelledby="risk-story-heading">
   <div class="section-heading"><h2 id="risk-story-heading">How far you can move depends on what you captured</h2><button class="resource preview-toggle" id="story-toggle" type="button" hidden>Pause comparison</button></div>
-  <p class="risk-intro">A new camera move can reveal surfaces, details, or views of a performance that the recorded take never captured. The model must invent that missing content, potentially changing the scene or the performer. These changes may only become apparent after generation, when the chance to capture more has passed.</p>
+  <ul class="risk-intro">
+    <li>Near the captured camera path, the reshoot stays <strong>more faithful</strong> to the recorded take.</li>
+    <li>Push beyond what was captured, and the model must <strong>hallucinate</strong>.</li>
+    <li>You may only find out <strong>in post</strong>, after the chance to capture more has passed.</li>
+  </ul>
   <div class="risk-example">
     <figure class="reshoot-comparison">
       <figcaption><span>Recorded take</span><span>Generative reshoot</span></figcaption>
