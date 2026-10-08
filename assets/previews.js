@@ -3,14 +3,14 @@
 
   function loopGroup(selector, toggleId, label) {
     const videos = [...document.querySelectorAll(selector)];
-    const toggle = document.getElementById(toggleId);
+    const toggle = toggleId ? document.getElementById(toggleId) : null;
 
     const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
     const visible = new Set();
     let enabled = !reducedMotion.matches;
 
     function update() {
-      toggle.textContent = `${enabled ? 'Pause' : 'Play'} ${label}`;
+      if (toggle) toggle.textContent = `${enabled ? 'Pause' : 'Play'} ${label}`;
       for (const video of videos) {
         if (enabled && !document.hidden && visible.has(video)) {
           if (!video.getAttribute('src')) video.src = video.dataset.src;
@@ -36,8 +36,10 @@
       video.addEventListener('error', () => video.classList.remove('has-preview'));
       observer.observe(video);
     }
-    toggle.hidden = false;
-    toggle.addEventListener('click', () => { enabled = !enabled; update(); });
+    if (toggle) {
+      toggle.hidden = false;
+      toggle.addEventListener('click', () => { enabled = !enabled; update(); });
+    }
     reducedMotion.addEventListener('change', () => { enabled = !reducedMotion.matches; update(); });
     document.addEventListener('visibilitychange', update);
     update();
@@ -46,5 +48,5 @@
   loopGroup('.factor-videos video', 'factor-toggle', 'animations');
   loopGroup('.visualizer-previews video', 'visualizer-toggle', 'previews');
   loopGroup('.risk-story video', 'story-toggle', 'comparison');
-  loopGroup('.slider-motif video', 'slider-toggle', 'slider');
+  loopGroup('.slider-motif video');
 })();

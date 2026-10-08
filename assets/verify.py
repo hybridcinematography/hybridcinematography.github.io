@@ -64,7 +64,8 @@ def main():
             assert not {'risk-interactive', 'risk-amount', 'risk-plan', 'risk-recorded', 'risk-requested'} & page.ids, 'Replaced interactive diagrams must not remain'
             assert text.index('class="project-teaser"') < text.index('class="abstract"') < text.index('id="hallucination-risk"') < text.index('id="risk-explainer"'), 'Risk introduction must follow the teaser and abstract, before the three factor animations'
             strategies = text.split('<h3>Strategies for visualizing hallucination risk</h3>', 1)[1].split('</li>', 1)[0]
-            assert 'class="slider-motif"' in strategies and 'id="slider-toggle"' in strategies, 'The slider must stay inside the strategies contribution'
+            assert 'class="slider-motif"' in strategies, 'The slider must stay inside the strategies contribution'
+            assert 'slider-toggle' not in page.ids and '<button' not in strategies, 'The slider contribution must not have a playback button'
             story = [v for v in page.videos if v.get('src', '').startswith('assets/risk-story/')]
             assert {urlsplit(v['src']).path for v in story} == {'assets/risk-story/reshoot.mp4', 'assets/risk-story/slider.mp4'} and len(story) == 2
             assert 'story-toggle' in page.ids

@@ -61,7 +61,6 @@ sup { color: var(--out); font-size: .65em; margin-left: 2px; }
 .slider-motif figcaption { display: flex; justify-content: space-between; gap: 16px; font-size: 15px; font-weight: 600; }
 .slider-motif figcaption > span:last-child { text-align: right; color: var(--out); }
 .slider-motif small { display: block; color: var(--ink-dim); font-size: 13px; font-weight: 400; }
-.slider-toggle { display: block; margin: 6px 0 0 auto; border: 0; color: var(--out); font-size: 12px; text-decoration: underline; text-underline-offset: 3px; }
 .contributions { margin-bottom: 34px; padding-bottom: 28px; border-bottom: 1px solid var(--line); scroll-margin-top: 28px; }
 .contributions h2 { font-size: 24px; font-weight: 700; margin-bottom: 18px; }
 .contributions ol { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 44px; list-style: decimal-leading-zero; margin: 0; padding-left: 28px; }
